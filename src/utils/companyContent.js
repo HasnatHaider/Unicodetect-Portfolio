@@ -7,9 +7,9 @@ export const companyContent = {
     "Based in Lahore. Working with startups and businesses in the US, UK, Europe and the Middle East.",
   title: "A product engineering partner built for long-term delivery",
   description:
-    "UnicodeTech is a product engineering company based in Lahore. Since 2023, our team of 30+ engineers, designers, and QA specialists has shipped 100+ web, mobile, and AI products for clients in 15+ countries.",
+    "UnicodeTech is a product engineering company, our team of 30+ engineers, designers, and QA specialists has shipped 100+ web, mobile, and AI products for clients in 15+ countries.",
   aboutStory:
-    "Most of our work comes from long-term partners: one client alone has trusted us with 7 mobile products since 2024. We pair clear scope and direct communication with production-grade engineering.",
+    "Most of our work comes from long-term partners: one client alone has trusted us with 7 mobile products. We pair clear scope and direct communication with production-grade engineering.",
   quality:
     "UnicodeTech delivers high-performing mobile and web products on schedule, backed by a 5-step delivery process and thorough quality assurance across performance, security, and maintainability.",
   email: "info@unicodetech.com",
@@ -25,9 +25,9 @@ export const companyContent = {
   consultationPhoneLabel: "US/Canada line",
   stats: [
     { value: "100+", label: "Products Delivered" },
-    { value: "Est. 2023", label: "Founded in Lahore" },
     { value: "30+", label: "In-House Engineers" },
     { value: "15+", label: "Countries Served" },
+    { value: "End-to-End", label: "Product Development" },
   ],
   deliveryProcess: [
     {

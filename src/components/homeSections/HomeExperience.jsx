@@ -76,17 +76,17 @@ const HomeExperience = () => {
           <div className="layout-item home-proven-delivery-long-term-partnerships__layout-6 proven-stat-card layout-full layout-flex layout is-loaded">
             <div className="layout-item home-proven-delivery-long-term-partnerships__8-years content-block block-heading">
               <div className="content-inner">
-                <p className="heading">Est. 2023</p>
+                <p className="heading">End-to-End</p>
               </div>
             </div>
             <div className="layout-item home-proven-delivery-long-term-partnerships__engineering-experience content-block block-heading">
               <div className="content-inner">
-                <p className="heading">Lahore Engineering Hub</p>
+                <p className="heading">Full-Cycle Development</p>
               </div>
             </div>
             <div className="layout-item home-proven-delivery-long-term-partnerships__production-grade-engineering width-custom no-wrap content-block block-heading">
               <div className="content-inner">
-                <span className="heading">In-house engineering team</span>
+                <span className="heading">From strategy to production</span>
               </div>
             </div>
           </div>

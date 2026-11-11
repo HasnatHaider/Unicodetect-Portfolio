@@ -86,9 +86,9 @@ const approach = companyContent.deliveryProcess;
 
 export default function AboutUs() {
   usePageMetadata({
-    title: "About UnicodeTech | Product Engineering Team in Lahore",
+    title: "About UnicodeTech | Product Engineering Team",
     description:
-      "Meet UnicodeTech — a product engineering company based in Lahore shipping web, mobile, and AI products for clients in 15+ countries since 2023.",
+      "Meet UnicodeTech — a product engineering company shipping web, mobile, and AI products for clients in 15+ countries since 2023.",
     bodyClass: "site site-design company-page-body",
   });
   return (
@@ -96,18 +96,17 @@ export default function AboutUs() {
       <CompanyHero
         eyebrow="WHO WE ARE"
         title="Product engineering built on long-term partnerships."
-        description="Based in Lahore, our team of 30+ engineers, designers, and QA specialists ships web, mobile, and AI products for teams in 15+ countries."
+        description="Our team of 30+ engineers, designers, and QA specialists ships web, mobile, and AI products for teams in 15+ countries."
       />
-      <section className="company-section about-facts-section" aria-label="Company facts">
+      <section
+        className="company-section about-facts-section"
+        aria-label="Company facts"
+      >
         <div className="company-container about-facts-row">
           <dl className="about-facts">
             <div>
               <dt>Founder &amp; CEO</dt>
               <dd>Mohsin Ali</dd>
-            </div>
-            <div>
-              <dt>Founded</dt>
-              <dd>{companyContent.foundedYear}</dd>
             </div>
             <div>
               <dt>In-house engineers</dt>
@@ -120,10 +119,6 @@ export default function AboutUs() {
             <div>
               <dt>Countries served</dt>
               <dd>15+</dd>
-            </div>
-            <div>
-              <dt>Base</dt>
-              <dd>Lahore, Pakistan</dd>
             </div>
           </dl>
         </div>
@@ -178,10 +173,7 @@ export default function AboutUs() {
               Explore the teams we’ve partnered with and the products we’ve
               designed, engineered, and launched together.
             </p>
-            <SiteLink
-              className="company-text-link"
-              href={paths.caseStudies}
-            >
+            <SiteLink className="company-text-link" href={paths.caseStudies}>
               Explore our partnerships{" "}
               <ArrowUpRight size={18} aria-hidden="true" />
             </SiteLink>
@@ -328,8 +320,7 @@ export default function AboutUs() {
             <p>We’re here to guide you every step of the way.</p>
           </div>
           <SiteLink schedule className="company-button">
-            Book a Strategy Call{" "}
-            <ArrowUpRight size={18} aria-hidden="true" />
+            Book a Strategy Call <ArrowUpRight size={18} aria-hidden="true" />
           </SiteLink>
         </div>
       </section>

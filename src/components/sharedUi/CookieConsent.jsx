@@ -38,8 +38,9 @@ const CookieConsent = () => {
       aria-live="polite"
     >
       <p className="cookie-banner__text">
-        By continuing, you agree to our use of cookies and Google Analytics. We
-        never sell personal data. EU/UK visitors: cookies require consent.{" "}
+        Cookies help us keep our website secure, improve your browsing
+        experience, and make content more relevant to you. You’re in control of
+        your cookie preferences.{" "}
         <a href="/accessibility" className="cookie-banner__link">
           Learn more
         </a>

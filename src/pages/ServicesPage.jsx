@@ -757,10 +757,10 @@ const ServicesPage = () => {
                 <div className="metric-value">100+</div>
                 <div className="metric-label">Products Delivered</div>
               </div>
-              <div className="metric-card">
+              {/* <div className="metric-card">
                 <div className="metric-value">Est. 2023</div>
                 <div className="metric-label">Founded in Lahore</div>
-              </div>
+              </div> */}
               <div className="metric-card">
                 <div className="metric-value metric-value--accent">
                   &lt;14 Days

@@ -414,7 +414,7 @@ const SaasBeyondLaunch = () => {
               <div className="layout-item saas-beyond-launch__we-pair-the-milestone-discipline-of width-auto content-block block-heading">
                 <div className="content-inner">
                   <p className="heading">
-                    Since 2023, our Lahore engineering team has brought
+                    Engineering team has brought
                     structured milestone discipline and weekly working demos to
                     every release.
                   </p>
