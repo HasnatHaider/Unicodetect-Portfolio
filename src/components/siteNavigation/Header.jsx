@@ -12,24 +12,27 @@ import {
   NavigationSubmenuItem,
 } from "../sharedUi/Interactive";
 
-const additionalServices = pendingServices.flatMap((service) =>
-  service.slug === "dedicated-product-teams"
-    ? [
-        service,
-        {
-          key: "apiSystemsIntegration",
-          slug: "api-systems-integration",
-          title: "API & Systems Integration Services",
-        },
-      ]
-    : [service],
-);
+const additionalServices = pendingServices
+  .filter((service) => service.slug !== "ai-video-creation")
+  .flatMap((service) =>
+    service.slug === "dedicated-product-teams"
+      ? [
+          service,
+          {
+            key: "apiSystemsIntegration",
+            slug: "api-systems-integration",
+            title: "API & Systems Integration Services",
+          },
+        ]
+      : [service],
+  );
 
 const Header = () => {
   const { pathname } = useLocation();
   const currentPath = pathname.replace(/\/+$/, "") || "/";
   const servicePaths = [
     paths.aiAgents,
+    paths.aiVideoCreation,
     paths.saas,
     paths.mobileWeb,
     paths.shopify,
@@ -145,6 +148,20 @@ const Header = () => {
                                   className="navigation-submenu-link"
                                 >
                                   AI Agents &amp; Automation Services
+                                  <ArrowUpRight
+                                    className="services-submenu__arrow"
+                                    size={16}
+                                    aria-hidden="true"
+                                  />
+                                </SiteLink>
+                              </li>
+                              <li className="menu-item">
+                                <SiteLink
+                                  {...activeLinkProps(paths.aiVideoCreation)}
+                                  href={paths.aiVideoCreation}
+                                  className="navigation-submenu-link"
+                                >
+                                  AI Video Creation
                                   <ArrowUpRight
                                     className="services-submenu__arrow"
                                     size={16}
