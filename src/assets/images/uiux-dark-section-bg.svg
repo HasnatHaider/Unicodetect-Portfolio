@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="690" viewBox="0 0 1440 690" fill="none">
+  <defs>
+    <radialGradient id="coral"><stop stop-color="#f55733" stop-opacity=".14"/><stop offset="1" stop-color="#f55733" stop-opacity="0"/></radialGradient>
+    <radialGradient id="indigo"><stop stop-color="#353767" stop-opacity=".19"/><stop offset="1" stop-color="#353767" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="44" height="44" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="#fff" fill-opacity=".035"/></pattern>
+  </defs>
+  <path fill="#0b0d12" d="M0 0h1440v690H0z"/>
+  <ellipse cx="1120" cy="30" rx="520" ry="460" fill="url(#coral)"/>
+  <ellipse cx="80" cy="530" rx="620" ry="460" fill="url(#indigo)"/>
+  <path fill="url(#dots)" d="M0 0h1440v690H0z"/>
+</svg>

@@ -1,0 +1,15 @@
+.bms-page .portfolio-hero {
+  background-image: var(--image-bmsEcosystemHeroBg);
+}
+.bms-strengths {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 1024px) {
+  .bms-page .portfolio-hero {
+    background-image:
+      linear-gradient(#faf9f6cc, #faf9f6cc), var(--image-bmsEcosystemHeroBg);
+  }
+  .bms-strengths {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

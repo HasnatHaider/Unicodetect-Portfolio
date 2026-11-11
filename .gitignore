@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local assistant settings and checks
+/.claude/
+node_modules
+package-lock.json
+dist
+dist-ssr
+*.local
+/tests/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+.env.*
+!.env.example
+
+# Local website audits
+*Audit.md
+*_Audit.md
+*_FIXES.md
+*_VERIFICATION.md
+
+# Local QA and reference HTML files
+UnicodeTech_Site_QA_Test.html
+Unicodetech_QA_Fixed.html
+UnicodeTech_Website_Road_to_10_10.txt
+UnicodeTech_Website.txt
+
+# Temporary server bundle used by static generation
+.prerender/
+.impeccable
+
+docs/
+
+DESIGN.md
+PRODUCT.md
+UnicodeTechTaskTracker.pdf
+UnicodeTechContentReview.docx

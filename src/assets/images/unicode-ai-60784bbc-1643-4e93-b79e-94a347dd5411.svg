@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="884" height="884" viewBox="0 0 884 884" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Premium Ambient &#226;&#128;&#148; Orange Top Right" filter="url(#filter0_f_0_51)">
+<circle cx="442" cy="442" r="350" fill="url(#paint0_radial_0_51)" style="mix-blend-mode:screen"/>
+</g>
+<defs>
+<filter id="filter0_f_0_51" x="0" y="0" width="884" height="884" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="46" result="effect1_foregroundBlur_0_51"/>
+</filter>
+<radialGradient id="paint0_radial_0_51" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(442 442) scale(500)">
+<stop stop-color="#F45B35" stop-opacity="0.187"/>
+<stop offset="0.5" stop-color="#F45B35" stop-opacity="0.05236"/>
+<stop offset="1" stop-color="#F45B35" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

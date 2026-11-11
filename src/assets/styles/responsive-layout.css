@@ -1,0 +1,87 @@
+:root {
+  --site-content-width: 1360px;
+  --site-section-padding: 50px;
+  --site-header-padding: 10px;
+  --site-footer-padding: 30px;
+}
+@media (max-width: 1439px) {
+  :root {
+    --site-section-padding: 30px;
+    --site-header-padding: 8px;
+    --site-footer-padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --site-section-padding: 20px;
+    --site-footer-padding: 15px;
+  }
+}
+.site .page-content > .section-root {
+  --content-width: min(100%, var(--site-content-width));
+  --padding-top: var(--site-section-padding);
+  --padding-right: var(--site-section-padding);
+  --padding-bottom: var(--site-section-padding);
+  --padding-left: var(--site-section-padding);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--site-section-padding);
+}
+.site .page-content > .section-root > .layout-inner,
+.site .page-content > .section-root > .layout-boxed,
+.site .page-content > .section-root > .layout-boxed > .layout-inner {
+  --content-width: min(100%, var(--site-content-width));
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-content-width);
+  margin-inline: auto;
+  padding: 0;
+}
+.site .header-page > .section-root {
+  --padding-top: var(--site-header-padding);
+  --padding-bottom: var(--site-header-padding);
+  padding-block: var(--site-header-padding);
+}
+.site .footer-page > .section-root {
+  --padding-top: 0px;
+  --padding-bottom: var(--site-footer-padding);
+  padding-block: 0 var(--site-footer-padding);
+}
+.site .home-page > :is(.home-spacer-10, .home-spacer-12) {
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  padding-block: 0;
+}
+.site .home-page > :is(.home-spacer-10, .home-spacer-12) > .block-divider {
+  width: 100%;
+  max-width: var(--site-content-width);
+  margin-inline: auto;
+}
+.site .ui-ux-page > section,
+.site .page-content > .service-section {
+  padding: var(--site-section-padding);
+}
+.site .ui-ux-page > section > .uiux-container,
+.site .page-content > .service-section > .service-container {
+  width: 100%;
+  max-width: var(--site-content-width);
+  margin-inline: auto;
+}
+.site .fallback-screen {
+  padding: var(--site-section-padding);
+}
+@media (max-width: 767px) {
+  .site .ui-ux-page > .uiux-hero {
+    min-height: 0;
+    align-items: flex-start;
+    background-size: auto 370px;
+    background-position: center bottom;
+  }
+  .site .ui-ux-page .uiux-hero-content {
+    max-width: none;
+  }
+}

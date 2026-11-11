@@ -1,0 +1,844 @@
+.web-development-page {
+  --web-dev-accent: #f45b35;
+  --web-dev-ink: #111318;
+  --web-dev-muted: #696d76;
+  color: var(--web-dev-ink);
+  background: #fcfaf8;
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.6;
+}
+.web-development-page *,
+.web-development-page *::before,
+.web-development-page *::after {
+  box-sizing: border-box;
+}
+.web-development-page h1,
+.web-development-page h2,
+.web-development-page h3,
+.web-development-page p {
+  margin: 0;
+}
+.web-development-page h1,
+.web-development-page h2,
+.web-development-page h3 {
+  font-family: Inter, Arial, sans-serif;
+  color: inherit;
+}
+.web-development-page h2 {
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.4px;
+}
+.web-development-page h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+}
+.web-development-page p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--web-dev-muted);
+}
+.web-development-page a {
+  text-decoration: none;
+}
+.web-dev-section-heading {
+  margin-bottom: 40px;
+}
+.web-dev-section-heading h2 {
+  margin-top: 24px;
+}
+.web-dev-section-heading > p {
+  margin-top: 24px;
+}
+.web-dev-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--web-dev-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.web-dev-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--web-dev-accent);
+}
+.web-dev-eyebrow-badge {
+  padding: 5px 12px;
+  border: 1px solid #ffffff10;
+  border-radius: 24px;
+  background: #ffffff03;
+  color: #d2d5dc;
+  font-size: 12px;
+}
+.web-dev-dark {
+  color: #f7f7f8;
+  background: #101217 var(--image-webDevelopmentDarkBg) center / cover no-repeat;
+}
+.web-dev-dark p {
+  color: #9498a3;
+}
+.web-dev-light {
+  background: #fcfaf8 var(--image-webDevelopmentLightBg) center / cover
+    no-repeat;
+}
+.web-dev-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.web-dev-button-primary {
+  background: var(--web-dev-accent);
+  color: #fff;
+}
+.web-dev-button-primary:hover {
+  background: #dd4828;
+  color: #fff;
+}
+.web-dev-button-outline {
+  background: #ffffff70;
+  border-color: var(--web-dev-accent);
+  color: var(--web-dev-accent);
+}
+.web-dev-button-outline:hover {
+  background: #fff0e8;
+  color: #c63c20;
+}
+.web-dev-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.web-dev-hero {
+  min-height: 800px;
+  padding-block: 80px;
+  display: flex;
+  align-items: center;
+  background: #fcfaf8 var(--image-webDevelopmentHeroBg) center / cover no-repeat;
+}
+.web-dev-hero-content {
+  max-width: 600px;
+}
+.web-dev-hero h1 {
+  margin-top: 16px;
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -2.3px;
+  line-height: 1.12;
+}
+.web-dev-hero-content .service-hero-description {
+  max-width: 580px;
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.web-dev-hero .web-dev-actions {
+  margin-top: 32px;
+}
+.web-dev-hero .web-dev-hero-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+  color: #888e9a;
+  font-size: 12px;
+}
+.web-dev-capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-inline: auto;
+}
+.web-dev-capability {
+  min-height: 280px;
+  padding: 38px;
+  background: #101217;
+  color: #fff;
+  border: 1px solid #ffffff08;
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: 0 12px 28px #10121712;
+}
+.web-dev-capability:hover {
+  transform: scale(1.03);
+}
+.web-dev-icon-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  background: #171a20;
+  color: #f45b35;
+}
+.web-dev-capability p {
+  margin-top: 12px;
+  color: #9599a4;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.web-dev-process .web-dev-section-heading > p {
+  max-width: 1120px;
+}
+.web-dev-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 36px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.web-dev-process-grid li {
+  position: relative;
+}
+.web-dev-process-grid li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 56px;
+  right: -36px;
+  height: 1px;
+  background: #ffffff2b;
+}
+.web-dev-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 28px;
+  background: var(--web-dev-accent);
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  color: white;
+}
+.web-dev-process-grid h3 {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+.web-dev-process-grid p {
+  max-width: 260px;
+  font-size: 13px;
+}
+.web-dev-stack {
+  background: #fcfaf8;
+}
+.web-dev-stack .web-dev-section-heading {
+  margin-bottom: 56px;
+}
+.web-dev-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.web-dev-technologies li {
+  padding: 10px 18px;
+  border: 1px solid #eeece9;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 5px 12px #00000006;
+  font-size: 13px;
+  font-weight: 500;
+}
+.web-dev-case-study {
+  background: #101217;
+  scroll-margin-top: 24px;
+}
+.web-dev-case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+.web-dev-case-study h2 {
+  max-width: 610px;
+  margin-top: 38px;
+  font-size: 40px;
+  line-height: 1.2;
+}
+.web-dev-case-study-grid > div > p {
+  max-width: 600px;
+  margin-top: 32px;
+}
+.web-dev-case-study img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 620px;
+  justify-self: center;
+  object-fit: contain;
+}
+.web-dev-case-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 36px 0 0;
+}
+.web-dev-case-metrics > div {
+  display: flex;
+  flex-direction: column;
+}
+.web-dev-case-metrics dt {
+  order: 1;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #c7c8cc;
+}
+.web-dev-case-metrics dd {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.web-dev-case-metrics > div:first-child dd {
+  color: var(--web-dev-accent);
+}
+.web-dev-metrics {
+  background: #fcfaf8;
+}
+.web-dev-metrics .web-dev-section-heading {
+  text-align: start;
+}
+.web-dev-metrics .web-dev-section-heading > p {
+  max-width: 800px;
+}
+.web-dev-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.web-dev-benefit {
+  padding: 38px;
+  border: 1px solid #e9e4df;
+  border-radius: 12px;
+  background: #fcfaf8;
+  box-shadow: 0 10px 26px #10121708;
+  transition: 0.3s;
+}
+.web-dev-benefit:hover {
+  border-top: 5px solid var(--web-dev-accent);
+}
+.web-dev-benefit h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+.web-dev-benefit p {
+  margin-top: 24px;
+  font-size: 14px;
+}
+.web-dev-cta {
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 125%, #f45b3520, transparent 55%), #101217;
+}
+.web-dev-cta h2 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+.web-dev-cta > .service-container > p {
+  max-width: 880px;
+  margin: 36px auto;
+  color: #c0c1c7;
+  font-size: 16px;
+}
+.web-dev-cta .web-dev-button {
+  min-width: 260px;
+  min-height: 64px;
+  border-radius: 999px;
+}
+.web-dev-cta > .service-container > .web-dev-cta-note {
+  margin: 32px auto 0;
+  font-size: 12px;
+  color: #898b95;
+}
+@media (max-width: 1439px) {
+  .web-dev-hero {
+    min-height: 700px;
+  }
+  .web-dev-hero-content {
+    max-width: 48%;
+  }
+  .web-dev-hero h1 {
+    font-size: 56px;
+  }
+  .web-dev-section-heading {
+    margin-bottom: 35px;
+  }
+  .web-development-page h2 {
+    font-size: 40px;
+  }
+  .web-dev-capability {
+    padding: 32px;
+  }
+  .web-dev-case-study-grid {
+    gap: 36px;
+  }
+  .web-dev-case-study h2 {
+    font-size: 36px;
+  }
+  .web-dev-benefit {
+    padding: 30px;
+  }
+  .web-dev-cta h2 {
+    font-size: 52px;
+  }
+}
+@media (max-width: 1024px) {
+  .web-dev-hero h1 {
+    font-size: 48px;
+  }
+  .web-dev-hero-content .service-hero-description {
+    font-size: 16px;
+  }
+  .web-dev-hero .web-dev-actions {
+    gap: 12px;
+  }
+  .web-dev-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+  .web-dev-process-grid li:nth-child(2)::after {
+    display: none;
+  }
+  .web-dev-process-grid li:not(:last-child)::after {
+    right: -32px;
+  }
+  .web-dev-case-study-grid {
+    gap: 28px;
+  }
+  .web-dev-case-study h2 {
+    font-size: 32px;
+  }
+  .web-dev-case-metrics {
+    gap: 16px;
+  }
+  .web-dev-case-metrics dd {
+    font-size: 38px;
+  }
+  .web-dev-benefit-grid {
+    gap: 20px;
+  }
+  .web-dev-benefit {
+    padding: 24px;
+  }
+  .web-dev-benefit h3 {
+    font-size: 19px;
+  }
+}
+@media (max-width: 767px) {
+  .web-development-page h2 {
+    font-size: 30px;
+    letter-spacing: -0.8px;
+  }
+  .web-development-page h3 {
+    font-size: 22px;
+  }
+  .web-dev-section-heading {
+    margin-bottom: 32px;
+  }
+  .web-dev-section-heading h2,
+  .web-dev-section-heading > p {
+    margin-top: 20px;
+  }
+  .web-dev-eyebrow {
+    font-size: 12px;
+  }
+  .web-dev-hero {
+    min-height: 0;
+    align-items: flex-start;
+    background-position: center center;
+  }
+  .web-dev-hero-content {
+    max-width: none;
+  }
+  .web-dev-hero h1 {
+    margin-top: 28px;
+    font-size: 48px;
+    letter-spacing: -1.6px;
+  }
+  .web-dev-hero-content .service-hero-description {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .web-dev-hero .web-dev-actions {
+    margin-top: 28px;
+    gap: 12px;
+  }
+  .web-dev-button {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+  .web-dev-hero .web-dev-hero-path {
+    margin-top: 24px;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .web-dev-capability-grid,
+  .web-dev-benefit-grid,
+  .web-dev-case-study-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .web-dev-capability {
+    min-height: auto;
+    padding: 28px;
+    border-radius: 18px;
+  }
+  .web-dev-icon-tile {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+  }
+  .web-dev-capability p {
+    font-size: 14px;
+  }
+  .web-dev-process-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .web-dev-process-grid li {
+    padding-left: 80px;
+    min-height: 80px;
+  }
+  .web-dev-step-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+  .web-dev-process-grid li:not(:last-child)::after {
+    display: block;
+    top: 56px;
+    bottom: -32px;
+    left: 28px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+  .web-dev-process-grid h3 {
+    font-size: 18px;
+  }
+  .web-dev-process-grid p {
+    max-width: none;
+    font-size: 14px;
+  }
+  .web-dev-stack .web-dev-section-heading {
+    margin-bottom: 28px;
+  }
+  .web-dev-technologies {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .web-dev-technologies li {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .web-dev-case-study h2 {
+    margin-top: 24px;
+    font-size: 30px;
+  }
+  .web-dev-case-study-grid > div > p {
+    margin-top: 24px;
+  }
+  .web-dev-case-metrics {
+    margin-top: 28px;
+    gap: 12px;
+  }
+  .web-dev-case-metrics dd {
+    font-size: 36px;
+  }
+  .web-dev-case-metrics dt {
+    font-size: 11px;
+  }
+  .web-dev-case-study img {
+    max-width: 500px;
+  }
+  .web-dev-benefit {
+    min-height: auto;
+    padding: 28px;
+  }
+  .web-dev-benefit h3 {
+    font-size: 22px;
+  }
+  .web-dev-benefit p {
+    margin-top: 16px;
+  }
+  .web-dev-cta h2 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+  .web-dev-cta > .service-container > p {
+    margin: 24px auto;
+    font-size: 15px;
+  }
+  .web-dev-cta .web-dev-button {
+    min-width: 240px;
+    min-height: 56px;
+  }
+}
+@media (max-width: 1024px) {
+  .web-dev-hero {
+    min-height: 500px;
+  }
+}
+@media (max-width: 768px) {
+  .web-dev-hero {
+    min-height: 400px;
+  }
+}
+
+/* ── Web Development FAQ Section ─────────────────────────────── */
+.web-development-page .layout-item.web-development-faq {
+  --display: flex;
+  --flex-direction: column;
+  --item-width: 100%;
+  --item-height: initial;
+  --item-flex-grow: 1;
+  --item-align-self: stretch;
+  --flex-wrap-mobile: wrap;
+  --gap: 0px 0px;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --margin-top: 0px;
+  --margin-bottom: 0px;
+  --margin-left: 0px;
+  --margin-right: 0px;
+  --padding-top: 70px;
+  --padding-bottom: 70px;
+  --padding-left: 50px;
+  --padding-right: 50px;
+}
+.web-development-page
+  .layout-item.web-development-faq:not(
+    .ui-motion-effects-element-type-background
+  ) {
+  background-color: #0000;
+  background-image: linear-gradient(
+    55deg,
+    #111318 72.7%,
+    #f45b35 134.173%
+  );
+}
+.web-development-page .layout-item.web-development-faq__layout {
+  --display: flex;
+  --flex-direction: row;
+  --item-width: calc((1 - var(--item-flex-grow)) * 100%);
+  --item-height: 100%;
+  --item-flex-grow: 1;
+  --item-align-self: stretch;
+  --flex-wrap-mobile: wrap;
+  --align-items: flex-start;
+  --gap: 0px 0px;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+  --z-index: 1;
+}
+.web-development-page .layout-item.web-development-faq__layout-2 {
+  --display: flex;
+  --flex-direction: column;
+  --item-width: calc((1 - var(--item-flex-grow)) * 100%);
+  --item-flex-grow: 1;
+  --flex-wrap-mobile: wrap;
+  --gap: 8px 0px;
+  --row-gap: 8px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-bottom: 32px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.web-development-page .layout-item.web-development-faq__common-questions {
+  width: auto;
+  max-width: auto;
+  text-align: start;
+}
+.web-development-page
+  .layout-item.web-development-faq__common-questions
+  > .content-inner {
+  margin: 0;
+}
+.web-development-page
+  .layout-item.web-development-faq__common-questions
+  .heading {
+  letter-spacing: 1px;
+  color: #f45b35;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14.85px;
+  text-transform: uppercase;
+}
+.web-development-page
+  .layout-item.web-development-faq__web-development-faq
+  > .content-inner {
+  margin: 0;
+}
+.web-development-page .layout-item.web-development-faq__web-development-faq {
+  text-align: start;
+}
+.web-development-page
+  .layout-item.web-development-faq__web-development-faq
+  .heading {
+  letter-spacing: -0.36px;
+  color: #fff;
+  font-family: Manrope, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+}
+.web-development-page .layout-item.web-development-faq__layout-3 {
+  --display: flex;
+  --flex-direction: column;
+  --item-width: 100%;
+  --item-flex-grow: 1;
+  --flex-wrap-mobile: wrap;
+  --gap: 0px 0px;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e7e4df;
+}
+.web-development-page
+  .layout-item.web-development-faq__layout-3:not(
+    .ui-motion-effects-element-type-background
+  ) {
+  background-color: #11131833;
+}
+.web-development-page .layout-item.web-development-faq__accordion > .content-inner,
+.web-development-page .layout-item.web-development-faq__accordion-2 > .content-inner,
+.web-development-page .layout-item.web-development-faq__accordion-3 > .content-inner {
+  border: 0 solid #e7e4df;
+  border-bottom-width: 1px;
+  margin: 0;
+}
+.web-development-page .layout-item.web-development-faq__accordion-4 > .content-inner {
+  border: 0;
+  margin: 0;
+}
+.web-development-page .layout-item.web-development-faq__accordion .accordion-item,
+.web-development-page .layout-item.web-development-faq__accordion .accordion-item .accordion-panel,
+.web-development-page .layout-item.web-development-faq__accordion .accordion-item .accordion-trigger.is-active,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-item,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-item .accordion-panel,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-item .accordion-trigger.is-active,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-item,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-item .accordion-panel,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-item .accordion-trigger.is-active,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-item,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-item .accordion-panel,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-item .accordion-trigger.is-active {
+  border-width: 0;
+}
+.web-development-page .layout-item.web-development-faq__accordion .accordion-trigger,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-trigger,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-trigger,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-trigger {
+  background-color: #fff0;
+  padding: 20px 28px 10px;
+}
+.web-development-page .layout-item.web-development-faq__accordion .accordion-icon,
+.web-development-page .layout-item.web-development-faq__accordion .accordion-label,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-icon,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-label,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-icon,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-label,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-icon,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-label {
+  color: #fff;
+}
+.web-development-page .layout-item.web-development-faq__accordion .accordion-label,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-label,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-label,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-label {
+  font-family: Manrope, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.web-development-page .layout-item.web-development-faq__accordion .accordion-trigger .accordion-icon svg,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-trigger .accordion-icon svg,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-trigger .accordion-icon svg,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-trigger .accordion-icon svg {
+  fill: #f45b35;
+}
+.web-development-page .layout-item.web-development-faq__accordion .accordion-trigger.is-active .accordion-icon svg,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-trigger.is-active .accordion-icon svg,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-trigger.is-active .accordion-icon svg,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-trigger.is-active .accordion-icon svg {
+  fill: #f45b35;
+}
+.web-development-page .layout-item.web-development-faq__accordion .accordion-panel,
+.web-development-page .layout-item.web-development-faq__accordion-2 .accordion-panel,
+.web-development-page .layout-item.web-development-faq__accordion-3 .accordion-panel,
+.web-development-page .layout-item.web-development-faq__accordion-4 .accordion-panel {
+  color: #e7e4df;
+  background-color: #fff0;
+  padding: 0 28px 20px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+}
+@media (max-width: 1024px) {
+  .web-development-page .layout-item.web-development-faq {
+    --padding-top: 50px;
+    --padding-bottom: 50px;
+    --padding-left: 30px;
+    --padding-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .web-development-page .layout-item.web-development-faq {
+    --padding-top: 50px;
+    --padding-bottom: 50px;
+    --padding-left: 24px;
+    --padding-right: 24px;
+  }
+  .web-development-page
+    .layout-item.web-development-faq__web-development-faq
+    .heading {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

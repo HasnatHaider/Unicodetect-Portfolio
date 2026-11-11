@@ -1,0 +1,131 @@
+.blog-editor-source {
+  padding: 18px 20px;
+  border: 1px solid var(--adm-line, #e6e1d9);
+  border-radius: 12px;
+  background: var(--adm-paper, #faf9f6);
+  margin-bottom: 6px;
+}
+
+.blog-editor-source__optional {
+  color: var(--adm-muted, #62666f);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.blog-editor-source__input {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.blog-editor-source button {
+  border: 0;
+  background: transparent;
+  color: var(--adm-brand-600, #c83d1d);
+  font: 600 12px var(--adm-font-sans, Inter, sans-serif);
+  cursor: pointer;
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+
+.blog-editor-source__status {
+  color: var(--adm-muted, #62666f);
+  font: 12px/1.65 var(--adm-font-sans, Inter, sans-serif);
+  margin-top: 8px;
+}
+
+.blog-editor-source__status button {
+  padding: 0;
+  margin-left: 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-editor-preview {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--adm-line, #e6e1d9);
+}
+
+.blog-editor-preview__media {
+  width: 156px;
+  aspect-ratio: 16 / 10;
+  align-self: flex-start;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.blog-editor-preview__media .blog-media__fallback {
+  padding: 12px;
+  gap: 6px;
+}
+
+.blog-editor-preview__media .blog-media__wordmark {
+  font-size: 12px;
+}
+
+.blog-editor-preview__media .blog-media__fallback > svg {
+  width: 22px;
+  height: 22px;
+}
+
+.blog-editor-preview > div:last-child {
+  min-width: 0;
+}
+
+.blog-editor-preview span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--adm-brand-600, #c83d1d);
+}
+
+.blog-editor-preview strong {
+  display: block;
+  font-family: var(--adm-font-display, Manrope, sans-serif);
+  color: var(--adm-ink, #17191e);
+  font-size: 14.5px;
+  line-height: 1.45;
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.blog-editor-preview p {
+  color: var(--adm-muted, #62666f);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+
+.blog-editor-preview a {
+  color: var(--adm-brand-600, #c83d1d);
+  font-size: 12px;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .blog-editor-source {
+    padding: 14px 16px;
+  }
+
+  .blog-editor-source__input {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .blog-editor-preview {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .blog-editor-preview__media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}

@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="664" height="664" viewBox="0 0 664 664" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Premium Glow &#226;&#128;&#148; Blue Bottom Left" filter="url(#filter0_f_0_46)">
+<circle cx="332" cy="332" r="260" fill="url(#paint0_radial_0_46)" style="mix-blend-mode:screen"/>
+</g>
+<defs>
+<filter id="filter0_f_0_46" x="0" y="0" width="664" height="664" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="36" result="effect1_foregroundBlur_0_46"/>
+</filter>
+<radialGradient id="paint0_radial_0_46" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332 332) scale(419.355)">
+<stop stop-color="#2E6BFF" stop-opacity="0.32"/>
+<stop offset="0.48" stop-color="#2E6BFF" stop-opacity="0.1216"/>
+<stop offset="1" stop-color="#2E6BFF" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
