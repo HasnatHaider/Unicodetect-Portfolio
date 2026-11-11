@@ -804,4 +804,138 @@ export const pendingServices = [
     reviewAttribution: "DailyDigest",
     caseStudyLink: "/case-studies/daily-digest",
   },
+  {
+    key: "aiVideoCreation",
+    title: "AI Video Creation",
+    slug: "ai-video-creation",
+    eyebrow: "AI VIDEO PRODUCTION & CREATIVE",
+    headline: "High-impact videos. Powered by AI. Built for your brand.",
+    description:
+      "From scroll-stopping advertisements to cinematic brand stories, we create engaging AI-powered videos that help businesses capture attention, communicate their value, and drive growth.",
+    supportingStatement:
+      "Turn your ideas, products, and campaigns into compelling visual experiences with AI-driven video production, creative direction, and professional storytelling.",
+    capabilities: [
+      {
+        title: "AI Advertisement Videos",
+        description:
+          "Create attention-grabbing advertisements without the complexity of traditional production. From creative concepts to polished visuals, we produce ads designed to make your brand stand out.",
+      },
+      {
+        title: "AI Product Videos",
+        description:
+          "Showcase your products through cinematic visuals, creative demonstrations, and engaging product storytelling that highlights their features and value.",
+      },
+      {
+        title: "Brand Videos",
+        description:
+          "Bring your brand identity to life with visually compelling stories that communicate your vision, personality, and unique positioning.",
+      },
+      {
+        title: "Marketing Videos",
+        description:
+          "Turn marketing ideas into powerful video content for campaigns, promotions, product launches, and customer engagement across digital platforms.",
+      },
+      {
+        title: "Social Media Videos",
+        description:
+          "Create platform-ready video content for Instagram, Facebook, TikTok, and YouTube. Designed to capture attention and keep your audience engaged.",
+      },
+      {
+        title: "Explainer & Promotional Videos",
+        description:
+          "Simplify complex ideas, introduce your services, and communicate your offerings through clear, engaging, and visually appealing videos.",
+      },
+    ],
+    process: [
+      {
+        title: "Discovery & Creative Direction",
+        description:
+          "We understand your brand, audience, objectives, and creative vision to develop a clear video concept and production direction.",
+      },
+      {
+        title: "Script & Visual Planning",
+        description:
+          "Our team develops the storytelling, script, visual references, and scene-by-scene direction to establish the creative foundation.",
+      },
+      {
+        title: "AI-Powered Production",
+        description:
+          "We bring the concept to life using AI video generation, cinematic visuals, motion, and carefully crafted creative elements.",
+      },
+      {
+        title: "Editing & Final Delivery",
+        description:
+          "We refine the footage through professional editing, sound design, music, and finishing touches before delivering platform-ready videos.",
+      },
+    ],
+    scenario: {
+      label: "CREATIVE PRODUCTION",
+      title: "Big creative possibilities. Without traditional production limitations.",
+      description:
+        "From product showcases to full-scale advertising campaigns, AI-powered production gives your business new ways to communicate, experiment, and create compelling visual content.",
+      stages: [
+        "Campaign-Ready Content",
+        "Brand-Consistent Visuals",
+        "Multi-Platform Delivery",
+      ],
+      note: "We combine creative strategy, AI-generated visuals, and professional post-production to create videos that align with your brand and marketing objectives.",
+    },
+    deliverables: [
+      "Campaign-ready videos tailored for advertising, promotions, and product launches",
+      "Brand-consistent visual storytelling shaped around your identity and messaging",
+      "Platform-ready formats for websites, social media, and digital advertisements",
+      "Professional post-production, including editing, sound design, and music",
+    ],
+    tools: [
+      "AI video generation",
+      "Creative direction and storytelling",
+      "Professional editing and sound design",
+      "Multi-platform format preparation",
+    ],
+    faqs: [
+      {
+        question: "What types of AI videos do you create?",
+        answer:
+          "We create AI-powered advertisements, product videos, brand films, marketing videos, social media content, promotional videos, and explainer videos.",
+      },
+      {
+        question: "Can you create videos using our existing brand assets?",
+        answer:
+          "Yes. We can incorporate your existing logos, product images, brand guidelines, references, and other creative assets to maintain consistency with your brand identity.",
+      },
+      {
+        question: "Do you provide scripts and creative direction?",
+        answer:
+          "Yes. Our services can include concept development, scriptwriting, storytelling, visual planning, and creative direction, depending on your project requirements.",
+      },
+      {
+        question: "Can videos be created for different social media platforms?",
+        answer:
+          "Absolutely. We can deliver videos in different aspect ratios and formats, including landscape, portrait, and square, depending on your distribution requirements.",
+      },
+      {
+        question: "How long does AI video production take?",
+        answer:
+          "Production timelines depend on the video length, creative complexity, number of revisions, and project requirements. We establish an estimated timeline before starting production.",
+      },
+      {
+        question: "Can you create videos for paid advertising campaigns?",
+        answer:
+          "Yes. We create promotional and advertising videos for digital marketing campaigns across platforms such as Meta, YouTube, and other advertising channels.",
+      },
+    ],
+    cta: "Have an idea? Let's turn it into a video.",
+    ctaDescription:
+      "Whether you need a product showcase, a creative advertisement, or a complete brand video, our team is ready to bring your vision to life.",
+    heroCta: "Book a Strategy Call",
+    hideHeroSecondaryCta: true,
+    ctaLabel: "Book a Strategy Call",
+    secondaryCta: "Discuss Your Project",
+    secondaryCtaHref: "/contact",
+    secondaryCtaBreadcrumb: {
+      label: "AI Video Creation",
+      href: "/ai-video-creation",
+    },
+    heroImage: "aiVideoCreatorStudio",
+  },
 ];

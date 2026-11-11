@@ -21,16 +21,18 @@
 }
 
 .project-detail-back {
-  display: inline-flex;
+  background-color: transparent;
+  border: 1px solid #c83d1d;
+  border-radius: 50px;
   align-items: center;
   gap: 8px;
-  color: #c83d1d !important;
-  font-size: 13px;
   margin-bottom: 32px;
-  border: 1px solid #f9d8cc;
-  border-radius: 50px;
   padding: 5px 10px;
-  background-color: #fff2ec;
+  font-size: 13px;
+  display: inline-flex;
+  color: #c83d1d !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .project-detail-hero-grid {

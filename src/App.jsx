@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import Home from "./pages/Home";
 const AiAgentsAutomation = lazy(() => import("./pages/AiAgentsAutomation"));
+const AiVideoCreation = lazy(() => import("./pages/AiVideoCreation"));
 const SaasDevelopment = lazy(() => import("./pages/SaasDevelopment"));
 const MobileWebEngineering = lazy(() => import("./pages/MobileWebEngineering"));
 const ShopifyEcommerce = lazy(() => import("./pages/ShopifyEcommerce"));
@@ -100,6 +101,7 @@ const App = () => {
           />
           <Route path={paths.privacyPolicy} element={<PrivacyPolicy />} />
           <Route path={paths.aiAgents} element={<AiAgentsAutomation />} />
+          <Route path={paths.aiVideoCreation} element={<AiVideoCreation />} />
           <Route path={paths.saas} element={<SaasDevelopment />} />
           <Route path={paths.mobileWeb} element={<MobileWebEngineering />} />
           <Route path={paths.shopify} element={<ShopifyEcommerce />} />

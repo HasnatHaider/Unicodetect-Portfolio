@@ -196,6 +196,15 @@ const Footer = () => {
                   <div className="layout-item footer-navigation-item content-block block-heading">
                     <div className="content-inner">
                       <div className="heading">
+                        <SiteLink href={paths.aiVideoCreation}>
+                          AI Video Creation
+                        </SiteLink>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="layout-item footer-navigation-item content-block block-heading">
+                    <div className="content-inner">
+                      <div className="heading">
                         <SiteLink href="/#industries">
                           Industries We Serve
                         </SiteLink>

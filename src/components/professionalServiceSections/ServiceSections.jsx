@@ -3,6 +3,7 @@ import {
   ArrowUpRight,
   Check,
   ClipboardCheck,
+  Film,
   Cloud,
   Code2,
   Compass,
@@ -34,6 +35,7 @@ const iconSets = {
   dedicatedProductTeams: [Users, Code2, Compass, Layers],
   productDiscoveryStrategy: [Users, Compass, Layers, Code2],
   maintenanceSupport: [Code2, Headphones, ShieldCheck, Workflow],
+  aiVideoCreation: [Film, Layers, Workflow, ClipboardCheck, Compass, Cloud],
 };
 export const ServicePage = ({ service, children }) => {
   usePageMetadata({
@@ -88,6 +90,11 @@ export const ServiceHero = ({ service, note }) => (
         <p className="professional-service-intro service-hero-description">
           {service.description}
         </p>
+        {service.supportingStatement && (
+          <p className="professional-service-supporting-statement">
+            {service.supportingStatement}
+          </p>
+        )}
         <div className="professional-service-actions">
           <SiteLink
             schedule
@@ -96,15 +103,21 @@ export const ServiceHero = ({ service, note }) => (
             {service.heroCta || "Book a Strategy Call"}{" "}
             <ArrowUpRight size={18} aria-hidden="true" />
           </SiteLink>
-          <a
-            className="professional-service-text-link service-hero-button service-hero-button--secondary"
-            href="#service-capabilities"
-          >
-            See what's included{" "}
-            <span aria-hidden="true">
-              <ArrowDown size={"1em"} aria-hidden="true" />
-            </span>
-          </a>
+          {!service.hideHeroSecondaryCta && (
+            <a
+              className="professional-service-text-link service-hero-button service-hero-button--secondary"
+              href={
+                service.heroSecondaryCtaHref ||
+                service.secondaryCtaHref ||
+                "#service-capabilities"
+              }
+            >
+              {service.secondaryCtaLabel || "See what's included"}{" "}
+              <span aria-hidden="true">
+                <ArrowDown size={"1em"} aria-hidden="true" />
+              </span>
+            </a>
+          )}
         </div>
         <p className="professional-service-hero-note">{note}</p>
       </div>
@@ -116,6 +129,7 @@ export const ServiceCapabilities = ({
   layout,
   title,
   description,
+  eyebrow = "WHAT WE DO",
 }) => (
   <section
     id="service-capabilities"
@@ -124,7 +138,7 @@ export const ServiceCapabilities = ({
   >
     <div className="service-container">
       <ServiceHeading
-        eyebrow="WHAT WE DO"
+        eyebrow={eyebrow}
         id="service-capabilities-title"
         description={description}
       >
@@ -259,14 +273,18 @@ export const ServiceDeliverables = ({ service, layout, title }) => (
     </div>
   </section>
 );
-export const ServiceFaq = ({ service, layout = "split" }) => (
+export const ServiceFaq = ({
+  service,
+  layout = "split",
+  title = "A little clarity before we begin.",
+}) => (
   <section
     className={`service-section professional-service-faq faq-${layout}`}
     aria-labelledby="service-faq-title"
   >
     <div className="service-container professional-service-faq-grid">
       <ServiceHeading eyebrow="COMMON QUESTIONS" id="service-faq-title">
-        A little clarity before we begin.
+        {title}
       </ServiceHeading>
       <DisclosureGroup className="professional-service-faq-list">
         {service.faqs.map(({ question, answer }, index) => (
@@ -340,10 +358,26 @@ export const ServiceCta = ({ service, layout = "centered" }) => (
               "Tell us where you are today and what you want to achieve. We’ll help define a practical next step."}
           </p>
         </div>
-        <SiteLink schedule className="professional-service-button">
-          {service.ctaLabel || "Book a Strategy Call"}{" "}
-          <ArrowUpRight size={18} aria-hidden="true" />
-        </SiteLink>
+        <div className="professional-service-cta-actions">
+          <SiteLink schedule className="professional-service-button">
+            {service.ctaLabel || "Book a Strategy Call"}{" "}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </SiteLink>
+          {service.secondaryCta && service.secondaryCtaHref && (
+            <SiteLink
+              href={service.secondaryCtaHref}
+              state={
+                service.secondaryCtaBreadcrumb
+                  ? { breadcrumbParent: service.secondaryCtaBreadcrumb }
+                  : undefined
+              }
+              className="professional-service-button professional-service-button--secondary"
+            >
+              {service.secondaryCta}
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </SiteLink>
+          )}
+        </div>
       </div>
     </section>
   </>

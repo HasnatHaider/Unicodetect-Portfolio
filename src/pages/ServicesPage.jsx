@@ -639,6 +639,30 @@ const SERVICES = {
     proof:
       "Ongoing production support and multi-year release management since 2024",
   },
+  16: {
+    suite: "suite-ai",
+    index: "PRACTICE #16",
+    suiteBadge: "AI & Product",
+    icon: "movie",
+    name: "AI Video Creation",
+    subtext: "Creative direction, AI-assisted production, editing",
+    tag: "Creative",
+    title: "AI Video Creation",
+    path: "/ai-video-creation",
+    cadence: "Scoped to your brief",
+    summary:
+      "From scroll-stopping advertisements to cinematic brand stories, we create engaging AI-powered videos that help businesses capture attention, communicate their value, and drive growth.",
+    deliverables: [
+      { num: "01", text: "Creative brief and production outline for the agreed video scope." },
+      { num: "02", text: "Script or storyboard for review before production." },
+      { num: "03", text: "Reviewed video edit with agreed revisions." },
+      { num: "04", text: "Final exports and included captions or format variants." },
+    ],
+    stack: ["Creative direction", "AI-assisted production", "Video editing", "Caption and export preparation"],
+    proofLabel: "Creative Approach",
+    proof:
+      "Creative direction, AI-powered production, professional storytelling, and platform-ready delivery",
+  },
 };
 const SUITES = [
   {
@@ -646,7 +670,7 @@ const SUITES = [
     label: "SUITE A · AI & PRODUCT",
     icon: "smart_toy",
     labelClass: "suite-label-row--ai",
-    serviceIds: [1, 2, 3],
+    serviceIds: [1, 2, 3, 16],
   },
   {
     id: "suite-web",
@@ -671,17 +695,17 @@ const SUITES = [
   },
 ];
 const CATEGORIES = [
-  { id: "all", label: "All Practices (15)" },
-  { id: "suite-ai", label: "AI & Product (3)" },
+  { id: "all", label: "All Practices (16)" },
+  { id: "suite-ai", label: "AI & Product (4)" },
   { id: "suite-web", label: "Web & Commerce (4)" },
   { id: "suite-design", label: "Design, Mobile & Integration (4)" },
   { id: "suite-cloud", label: "Cloud, Quality & Teams (4)" },
 ];
 const ServicesPage = () => {
   usePageMetadata({
-    title: "Services | UnicodeTech — 15 Specialized Engineering Practices",
+    title: "Services | UnicodeTech — 16 Specialized Engineering Practices",
     description:
-      "Explore UnicodeTech\u2019s 15 specialized engineering practices — AI agents, SaaS platforms, mobile apps, cloud infrastructure, and dedicated product teams.",
+      "Explore UnicodeTech\u2019s 16 specialized engineering practices — AI video creation, AI agents, SaaS platforms, mobile apps, cloud infrastructure, and dedicated product teams.",
     bodyClass: "site services-page",
   });
   const [selectedId, setSelectedId] = useState(1);
@@ -748,7 +772,7 @@ const ServicesPage = () => {
               </h1>
               <p className="hero-description">
                 From AI agents and SaaS platforms to mobile apps, cloud
-                infrastructure, and dedicated product teams — 15 specialized
+                infrastructure, and dedicated product teams — 16 specialized
                 practices built to ship production-grade software at velocity.
               </p>
             </div>
@@ -802,7 +826,7 @@ const ServicesPage = () => {
                 PRACTICE REGISTRY · SELECTOR
               </span>
               <span className="navigator-count">
-                {visibleCount} of 15 Practices
+                {visibleCount} of 16 Practices
               </span>
             </div>
             <div className="practice-list">
@@ -898,7 +922,9 @@ const ServicesPage = () => {
                   <span className="material-symbols-outlined">award_star</span>
                 </div>
                 <div>
-                  <span className="proof-meta-label">Production Proof</span>
+                  <span className="proof-meta-label">
+                    {current.proofLabel || "Production Proof"}
+                  </span>
                   <span className="proof-meta-text">{current.proof}</span>
                 </div>
               </div>

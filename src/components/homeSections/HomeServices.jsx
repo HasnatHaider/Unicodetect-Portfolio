@@ -1,4 +1,5 @@
 import { IMAGES } from "../../utils/Constant";
+import { Film } from "lucide-react";
 import {
   ServicesSection,
   ServicesToggle,
@@ -1011,6 +1012,23 @@ const HomeServices = () => {
                 </p>
               </div>
             </div>
+          </SiteLink>
+          <SiteLink
+            href="/ai-video-creation"
+            className="home-video-creation-card service-card"
+          >
+            <span className="home-video-creation-card__icon">
+              <Film size={27} strokeWidth={1.6} aria-hidden="true" />
+            </span>
+            <span>
+              <span className="home-video-creation-card__title">
+                AI Video Creation
+              </span>
+              <span className="home-video-creation-card__description">
+                AI-powered video production, creative direction, and visual
+                storytelling for your brand.
+              </span>
+            </span>
           </SiteLink>
         </div>
         <div className="layout-item home-services__button view-more-btn services-toggle content-block">

@@ -440,7 +440,7 @@ h2 {
 
 @media (min-width: 1440px) {
   .header-page .layout-item.header-hero__navigation-menu .has-submenu>.services-submenu--expanded {
-    width: min(1040px, var(--services-menu-available-width));
+    width: min(1100px, var(--services-menu-available-width));
     grid-auto-columns: minmax(0, 1fr);
   }
 }

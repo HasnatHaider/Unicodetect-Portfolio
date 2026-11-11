@@ -41,6 +41,7 @@ import qaTestingHeroBg from "../assets/images/qa-testing-hero-bg.svg";
 import dedicatedProductTeamsHeroBg from "../assets/images/dedicated-product-teams-hero-bg.svg";
 import productDiscoveryStrategyHeroBg from "../assets/images/product-discovery-strategy-hero-bg.svg";
 import maintenanceSupportHeroBg from "../assets/images/maintenance-support-hero-bg.svg";
+import aiVideoCreatorStudio from "../assets/images/AI-Video-Production-Workspace.png";
 import apiSystemsIntegrationHeroBg from "../assets/images/api-systems-integration-hero-bg-2000.webp";
 import apiSystemsIntegrationCaseStudy from "../assets/images/api-systems-integration-case-study-968.webp";
 import uiuxUserResearch from "../assets/images/uiux-user-research.png";
@@ -326,6 +327,7 @@ export const IMAGES = {
   dedicatedProductTeamsHeroBg,
   productDiscoveryStrategyHeroBg,
   maintenanceSupportHeroBg,
+  aiVideoCreatorStudio,
   apiSystemsIntegrationHeroBg,
   apiSystemsIntegrationCaseStudy,
   uiuxUserResearch,

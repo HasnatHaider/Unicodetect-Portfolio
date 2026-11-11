@@ -14,6 +14,7 @@ export const breadcrumbMap = {
   [paths.services]: [HOME, { label: "Services" }],
   [paths.caseStudies]: [HOME, CASE_STUDIES],
   [paths.aiAgents]: [HOME, SERVICES, { label: "AI Agents & Automation" }],
+  [paths.aiVideoCreation]: [HOME, SERVICES, { label: "AI Video Creation" }],
   [paths.saas]: [HOME, SERVICES, { label: "SaaS Development" }],
   [paths.mobileWeb]: [HOME, SERVICES, { label: "Mobile & Web Engineering" }],
   [paths.shopify]: [HOME, SERVICES, { label: "Shopify & E-commerce" }],

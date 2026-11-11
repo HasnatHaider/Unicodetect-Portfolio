@@ -15,6 +15,7 @@ export const paths = {
   home: "/",
   services: "/services",
   aiAgents: "/ai-agents-automation",
+  aiVideoCreation: "/ai-video-creation",
   saas: "/saas-development",
   mobileWeb: "/mobile-web-engineering",
   shopify: "/shopify-e-commerce",
