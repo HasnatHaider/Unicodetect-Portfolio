@@ -25,7 +25,14 @@
   background-position: right center;
 }
 
+/* Empty placeholder with the same 3:2 footprint as the other heroes' mockups,
+   so this hero ends up the same height */
 .project-detail-hero--art-bg .project-detail-artwork {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+}
+
+.project-detail-hero--art-bg .project-detail-artwork img {
   display: none;
 }
 
@@ -35,7 +42,11 @@
   }
 
   .project-detail-hero--art-bg .project-detail-artwork {
-    display: flex;
+    aspect-ratio: auto;
+  }
+
+  .project-detail-hero--art-bg .project-detail-artwork img {
+    display: block;
   }
 
   .project-detail-hero--art-bg .project-detail-artwork img {
