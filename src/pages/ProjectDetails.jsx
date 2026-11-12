@@ -71,7 +71,7 @@ function ProjectArtwork({ project }) {
           ) : (
             <iframe
               ref={playerRef}
-              src={`https://player.vimeo.com/video/${project.heroVideo}?dnt=1&playsinline=1&title=0&byline=0&portrait=0&autoplay=1&api=1&player_id=bellreserve-case-study`}
+              src={`https://player.vimeo.com/video/${project.heroVideo}?badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1&autoplay=1&api=1`}
               title={`${project.title} product video`}
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen

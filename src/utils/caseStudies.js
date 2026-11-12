@@ -139,9 +139,9 @@ export const caseStudyProjects = [
     heroMockupKey: "caseStudyBellReserve",
     heroBgKey: "caseStudyBellReserveHeroBg",
     heroOverlay: "rgba(255, 255, 255, 0.58)",
-    heroVideo: "1222123954",
+    heroVideo: "1246340895",
     heroVideoThumbnail:
-      "https://i.vimeocdn.com/video/2195002019-bade30223233e02ef1bfbae2a9ae4d41496d488d99cabf132f5eaff9260ab603-d_1280?region=us",
+      "https://i.vimeocdn.com/video/2225714126-1bb85c3a1f5bd4c91b7d509cf7cc1152f10a4bdb0ef747c2910379c717fe2428-d_1280?region=us",
     href: "/case-studies/bellreserve",
   },
 ];
