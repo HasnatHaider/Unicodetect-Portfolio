@@ -1,5 +1,6 @@
 import bmsLogo from "../assets/images/clients/bms-logo.webp";
 import boatBuddyLogo from "../assets/images/clients/boatbuddy-logo.webp";
+import bellReserveLogo from "../assets/images/clients/bellreserve_logo_blue_png.webp";
 import careCompassIcon from "../assets/images/clients/carecompass-icon.webp";
 import contractorConnectIcon from "../assets/images/clients/contractorconnect-icon.webp";
 import dailyDigestIcon from "../assets/images/clients/dailydigest-icon.webp";
@@ -16,6 +17,15 @@ import taskHiveIcon from "../assets/images/clients/taskhive-icon.webp";
 // `transparentSrc` is the same artwork with its white backdrop removed, for
 // placements that sit directly on a tinted background instead of a white tile.
 export const clientLogos = {
+  bellreserve: {
+    src: bellReserveLogo,
+    width: 320,
+    height: 100,
+    name: "BellReserve",
+    alt: "BellReserve logo",
+    initials: "BR",
+    wide: true,
+  },
   bms: {
     src: bmsLogo,
     width: 166,

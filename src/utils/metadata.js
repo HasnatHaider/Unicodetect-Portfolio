@@ -10,6 +10,7 @@ export const aliases = {
       "daily-digest",
       "contractor-connect",
       "task-hive",
+      "bellreserve",
     ].map((slug) => [`/${slug}`, `/case-studies/${slug}`]),
   ),
 };

@@ -43,6 +43,12 @@
 
   <!-- Case study detail pages -->
   <url>
+    <loc>https://unicodetech-dev.vercel.app/case-studies/bellreserve</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://unicodetech-dev.vercel.app/case-studies/spin-the-night</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>

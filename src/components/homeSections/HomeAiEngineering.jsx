@@ -179,12 +179,11 @@ const HomeAiEngineering = () => {
                         <div>
                           <SiteLink
                             className="button"
-                            target="_blank"
-                            href="https://bellreserve.com/"
+                            href="/case-studies/bellreserve"
                           >
                             <span className="button-content">
                               <span className="button-label">
-                                Explore BellReserve{" "}
+                                View BellReserve Case Study{" "}
                                 <ArrowUpRight size={"1em"} aria-hidden="true" />
                               </span>
                             </span>

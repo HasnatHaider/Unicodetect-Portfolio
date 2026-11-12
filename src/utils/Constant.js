@@ -32,6 +32,8 @@ import caseStudyDailyDigestHeroBg from "../assets/images/DailyDigest-case-study-
 import caseStudyLiftPitch from "../assets/images/LiftPitchCover-1024.webp";
 import caseStudyLiftPitch480 from "../assets/images/LiftPitchCover-480.webp";
 import caseStudyLiftPitchHeroBg from "../assets/images/LiftPitchHero-1792.webp";
+import caseStudyBellReserve from "../assets/images/BellReserveAIReceptionistDashboard.png";
+import caseStudyBellReserveHeroBg from "../assets/images/BRHeroBG.jpg";
 import caseStudyCareCompass from "../assets/images/CareCompass.png";
 import caseStudyCareCompassHeroMockup from "../assets/images/CareCompass-case-study-hero-Mockup-960.webp";
 import caseStudyCareCompassHeroMockup480 from "../assets/images/CareCompass-case-study-hero-Mockup-480.webp";
@@ -320,6 +322,8 @@ export const IMAGES = {
   caseStudyLiftPitch,
   caseStudyLiftPitch480,
   caseStudyLiftPitchHeroBg,
+  caseStudyBellReserve,
+  caseStudyBellReserveHeroBg,
   caseStudyCareCompass,
   caseStudyCareCompassHeroMockup,
   caseStudyCareCompassHeroMockup480,

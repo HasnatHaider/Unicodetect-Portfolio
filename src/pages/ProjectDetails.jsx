@@ -1,6 +1,7 @@
 import ResponsiveImage from "../components/sharedUi/ResponsiveImage";
 import { useParams } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Check, Workflow } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowUpRight, Check, Workflow, Phone } from "lucide-react";
 import usePageMetadata from "../hooks/usePageMetadata";
 import { caseStudyProjects } from "../utils/caseStudies";
 import PageBreadcrumb from "../components/sharedUi/PageBreadcrumb";
@@ -16,6 +17,102 @@ import NotFound from "./NotFound";
 import "../assets/styles/pages/projectDetails.css";
 
 function ProjectArtwork({ project }) {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const playerRef = useRef(null);
+
+  useEffect(() => {
+    if (!videoLoaded || !playerRef.current) return undefined;
+    const iframe = playerRef.current;
+    const handleMessage = (event) => {
+      if (event.origin !== "https://player.vimeo.com" || event.source !== iframe.contentWindow) return;
+      let data = event.data;
+      try {
+        if (typeof data === "string") data = JSON.parse(data);
+      } catch {
+        return;
+      }
+      if (data?.event === "play") setVideoPlaying(true);
+      if (data?.event === "pause" || data?.event === "ended") {
+        setVideoLoaded(false);
+        setVideoPlaying(false);
+      }
+    };
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [videoLoaded]);
+
+  const startVideo = () => {
+    setVideoLoaded(true);
+    setVideoPlaying(true);
+  };
+
+  if (project.heroVideo) {
+    return (
+      <div className="project-detail-video-shell">
+        <div
+          className={`project-detail-video${videoPlaying ? " is-playing" : ""}`}
+        >
+          <img
+            src={project.heroVideoThumbnail}
+            alt="BellReserve product video thumbnail"
+          />
+          {!videoLoaded ? (
+            <button
+              className="project-detail-video__load"
+              type="button"
+              onClick={startVideo}
+              aria-label={`Play ${project.title} product video`}
+            >
+              <span className="project-detail-video__play" aria-hidden="true">
+                ▶
+              </span>
+            </button>
+          ) : (
+            <iframe
+              ref={playerRef}
+              src={`https://player.vimeo.com/video/${project.heroVideo}?dnt=1&playsinline=1&title=0&byline=0&portrait=0&autoplay=1&api=1&player_id=bellreserve-case-study`}
+              title={`${project.title} product video`}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              onLoad={(event) => {
+                const playerWindow = event.currentTarget.contentWindow;
+                ["play", "pause", "ended"].forEach((value) => {
+                  playerWindow?.postMessage(
+                    JSON.stringify({ method: "addEventListener", value }),
+                    "https://player.vimeo.com",
+                  );
+                });
+                playerWindow?.postMessage(
+                  JSON.stringify({ method: "play" }),
+                  "https://player.vimeo.com",
+                );
+              }}
+            />
+          )}
+        </div>
+        <div className="project-detail-video-caption">
+          <a
+            href="#bellreserve-live-call"
+            className="project-detail-video-caption__watch"
+          >
+            WATCH NOW
+          </a>
+          <span>See how BellReserve answers a real call.</span>
+        </div>
+        <a
+          id="bellreserve-live-call"
+          className="project-detail-video-call"
+          href="tel:+16414664655"
+        >
+          <span>
+            <Phone size={19} aria-hidden="true" /> Tap to test BellReserve live
+          </span>
+          <strong>+1 (641) 466-4655</strong>
+        </a>
+      </div>
+    );
+  }
   const artworkKey = project.heroMockupKey ?? project.imageKey;
   return artworkKey ? (
     <ResponsiveImage
@@ -48,7 +145,8 @@ function ProjectContent({ project, details }) {
     ];
   const builtItems = details.built || details.features || [];
   const scopeItems = details.services || details.workflow || [];
-  const hasMetrics = Array.isArray(details.metrics) && details.metrics.length > 0;
+  const hasMetrics =
+    Array.isArray(details.metrics) && details.metrics.length > 0;
   const clientCompany = clientLogos[project.clientLogoId];
   const reviewCard = details.reviewCardId
     ? clientReviews[details.reviewCardId]
@@ -61,13 +159,18 @@ function ProjectContent({ project, details }) {
         aria-labelledby="project-detail-title"
         style={{
           ...(project.heroBgKey
-            ? { "--image-caseStudiesHeroBg": `url(${IMAGES[project.heroBgKey]})` }
+            ? {
+                "--image-caseStudiesHeroBg": `url(${IMAGES[project.heroBgKey]})`,
+              }
             : {}),
           ...(project.darkHero
             ? {
                 "--service-hero-heading-color": "#fff",
                 "--service-hero-description-color": "#b8c2cd",
               }
+            : {}),
+          ...(project.heroOverlay
+            ? { "--project-hero-overlay": project.heroOverlay }
             : {}),
         }}
       >
@@ -231,7 +334,10 @@ function ProjectContent({ project, details }) {
           aria-labelledby="project-review-title"
         >
           <div className="project-detail-container">
-            <span className="project-detail-eyebrow reviewHeader" id="project-review-title">
+            <span
+              className="project-detail-eyebrow reviewHeader"
+              id="project-review-title"
+            >
               WHAT THE CLIENT SAID
             </span>
             <ReviewCard review={reviewCard} variant="case-study" />

@@ -127,4 +127,21 @@ export const caseStudyProjects = [
     heroArtInBackground: true,
     href: "/case-studies/liftpitch",
   },
+  {
+    title: "BellReserve",
+    slug: "bellreserve",
+    logoId: "bellreserve",
+    category: "Restaurant voice AI",
+    description:
+      "BellReserve gives restaurants an AI phone receptionist that answers guest calls around the clock, manages reservations and pickup or delivery orders, and keeps staff informed with clear call summaries.",
+    stack: ["Voice AI", "Call automation", "Reservations", "Order handling", "Restaurant dashboard", "Multi-location"],
+    imageKey: "caseStudyBellReserve",
+    heroMockupKey: "caseStudyBellReserve",
+    heroBgKey: "caseStudyBellReserveHeroBg",
+    heroOverlay: "rgba(255, 255, 255, 0.58)",
+    heroVideo: "1222123954",
+    heroVideoThumbnail:
+      "https://i.vimeocdn.com/video/2195002019-bade30223233e02ef1bfbae2a9ae4d41496d488d99cabf132f5eaff9260ab603-d_1280?region=us",
+    href: "/case-studies/bellreserve",
+  },
 ];
