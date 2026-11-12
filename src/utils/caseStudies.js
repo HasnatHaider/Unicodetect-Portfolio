@@ -1,3 +1,5 @@
+import bellReserveVideo from "../assets/videos/bellreserve-full-video-re-new.mp4";
+
 export const caseStudyProjects = [
   {
     title: "Spin The Night",
@@ -139,7 +141,7 @@ export const caseStudyProjects = [
     heroMockupKey: "caseStudyBellReserve",
     heroBgKey: "caseStudyBellReserveHeroBg",
     heroOverlay: "rgba(255, 255, 255, 0.58)",
-    heroVideo: "1246340895",
+    heroVideoSrc: bellReserveVideo,
     heroVideoThumbnail:
       "https://i.vimeocdn.com/video/2225714126-1bb85c3a1f5bd4c91b7d509cf7cc1152f10a4bdb0ef747c2910379c717fe2428-d_1280?region=us",
     href: "/case-studies/bellreserve",

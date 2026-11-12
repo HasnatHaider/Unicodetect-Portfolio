@@ -1,6 +1,6 @@
 import ResponsiveImage from "../components/sharedUi/ResponsiveImage";
 import { useParams } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Workflow, Phone } from "lucide-react";
 import usePageMetadata from "../hooks/usePageMetadata";
 import { caseStudyProjects } from "../utils/caseStudies";
@@ -18,40 +18,15 @@ import "../assets/styles/pages/projectDetails.css";
 
 function ProjectArtwork({ project }) {
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState(false);
-  const playerRef = useRef(null);
-
-  useEffect(() => {
-    if (!videoLoaded || !playerRef.current) return undefined;
-    const iframe = playerRef.current;
-    const handleMessage = (event) => {
-      if (event.origin !== "https://player.vimeo.com" || event.source !== iframe.contentWindow) return;
-      let data = event.data;
-      try {
-        if (typeof data === "string") data = JSON.parse(data);
-      } catch {
-        return;
-      }
-      if (data?.event === "play") setVideoPlaying(true);
-      if (data?.event === "pause" || data?.event === "ended") {
-        setVideoLoaded(false);
-        setVideoPlaying(false);
-      }
-    };
-    window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
-  }, [videoLoaded]);
-
   const startVideo = () => {
     setVideoLoaded(true);
-    setVideoPlaying(true);
   };
 
-  if (project.heroVideo) {
+  if (project.heroVideoSrc) {
     return (
       <div className="project-detail-video-shell">
         <div
-          className={`project-detail-video${videoPlaying ? " is-playing" : ""}`}
+          className="project-detail-video"
         >
           <img
             src={project.heroVideoThumbnail}
@@ -69,25 +44,16 @@ function ProjectArtwork({ project }) {
               </span>
             </button>
           ) : (
-            <iframe
-              ref={playerRef}
-              src={`https://player.vimeo.com/video/${project.heroVideo}?badge=0&autopause=0&player_id=0&app_id=58479&playsinline=1&autoplay=1&api=1`}
+            <video
+              src={project.heroVideoSrc}
               title={`${project.title} product video`}
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              onLoad={(event) => {
-                const playerWindow = event.currentTarget.contentWindow;
-                ["play", "pause", "ended"].forEach((value) => {
-                  playerWindow?.postMessage(
-                    JSON.stringify({ method: "addEventListener", value }),
-                    "https://player.vimeo.com",
-                  );
-                });
-                playerWindow?.postMessage(
-                  JSON.stringify({ method: "play" }),
-                  "https://player.vimeo.com",
-                );
-              }}
+              poster={project.heroVideoThumbnail}
+              controls
+              autoPlay
+              playsInline
+              preload="none"
+              onPause={() => setVideoLoaded(false)}
+              onEnded={() => setVideoLoaded(false)}
             />
           )}
         </div>

@@ -209,18 +209,14 @@
   transition: opacity 180ms ease;
 }
 
-.project-detail-video>iframe {
+.project-detail-video>video {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.project-detail-video.is-playing>img {
-  opacity: 0;
-  pointer-events: none;
+  object-fit: contain;
 }
 
 .project-detail-video__load {
