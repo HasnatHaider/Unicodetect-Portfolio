@@ -1,0 +1,145 @@
+.client-logo {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.client-logo img {
+  display: block;
+  max-width: none;
+  object-fit: contain;
+}
+
+.client-logo--tile {
+  border: 1px solid #1113181a;
+  background: #fff;
+}
+
+.client-logo--initials {
+  border: 1px solid #ff5a3633;
+  border-radius: 9px;
+  background: #ff5a360d;
+  color: #ff5a36;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Logo + name pairing used across cards and headings */
+.client-logo-lockup {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.client-logo-lockup > :not(.client-logo) {
+  min-width: 0;
+}
+
+/* "Trusted by" strip: muted grey by default, full colour on hover */
+.trusted-logo--official {
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition:
+    filter 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.swiper-slide-content:hover .trusted-logo--official,
+.trusted-logo--official:focus-visible {
+  filter: none;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trusted-logo--official {
+    transition: none;
+  }
+}
+
+/* Homepage BMS card */
+.home-page .bms-client-lockup {
+  gap: 8px;
+}
+
+.home-page .bms-app-lockup {
+  width: 100%;
+}
+
+.home-page .bms-app-lockup > .layout-item {
+  width: auto;
+  flex: 1 1 0;
+}
+
+/* Case study list cards */
+.portfolio-project-title {
+  gap: 12px;
+}
+
+/* Case study detail */
+.project-detail-title-row {
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.project-detail-title-row .service-hero-title {
+  margin: 0;
+}
+
+.project-detail-client {
+  margin: 4px 0 16px;
+  color: #4b4d52;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* BMS ecosystem page */
+.bms-hero-client {
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.bms-quickzip-icon {
+  margin-bottom: 16px;
+}
+
+/* Review cards */
+.review-card__logo {
+  align-self: flex-start;
+}
+
+@media (max-width: 767px) {
+  .project-detail-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* Let the three-app row size to its content so long names stay on one line */
+@media (min-width: 768px) {
+  .home-page .layout-item.home-success-stories__layout-26 > .layout-item {
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+  .home-page .bms-app-lockup .heading {
+    white-space: nowrap;
+  }
+}
+
+/* Top row of the BMS app list: two equal halves */
+@media (min-width: 768px) {
+  .home-page .layout-item.home-success-stories__layout-17 > .layout-item {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+}

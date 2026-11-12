@@ -1,5 +1,39 @@
 import { IMAGES } from "../../utils/Constant";
 import { ImageCarousel } from "../sharedUi/Interactive";
+import { clientLogos } from "../../utils/clientLogos";
+
+const officialLogo = (id) => ({
+  src: clientLogos[id].transparentSrc || clientLogos[id].src,
+  alt: clientLogos[id].alt,
+  official: true,
+});
+
+// Official client-supplied logos first; the remaining three are the existing
+// monochrome company marks already used in this strip.
+const trustedLogos = [
+  officialLogo("bms"),
+  officialLogo("liftpitch"),
+  officialLogo("spinTheNight"),
+  officialLogo("quickzip"),
+  {
+    src: IMAGES.Image_1_e1790338579351_1024x312,
+    alt: "Maven Technologies logo",
+  },
+  officialLogo("carecompass"),
+  officialLogo("iconicBeauti"),
+  officialLogo("taskhive"),
+  {
+    src: IMAGES.Logo_Image_04_Replace_This_Fill_e1790338671732,
+    alt: "Jayda Cheaves Beauty logo",
+  },
+  officialLogo("dailydigest"),
+  officialLogo("contractorconnect"),
+  {
+    src: IMAGES.Logo_Image_06_Replace_This_Fill_e1790338733313,
+    alt: "VirsaMigrate Overseas Recruitment logo",
+  },
+  officialLogo("boatBuddy"),
+];
 const HomeExperience = () => {
   return (
     <div
@@ -147,105 +181,21 @@ const HomeExperience = () => {
             delay={1}
             loop
           >
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_07_Replace_This_Fill_e1790338227482}
-                  alt="BMS Computer Management"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Image_1_e1790338579351_1024x312}
-                  alt="DailyDigest"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_05_Replace_This_Fill_e1790338698132}
-                  alt="Iconic Beauti"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_08_Replace_This_Fill_e1790338752200}
-                  alt="Spin The Night"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_06_Replace_This_Fill_e1790338733313}
-                  alt="BellReserve"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_02_Replace_This_Fill_e1790338622797}
-                  alt="QuickZip"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_04_Replace_This_Fill_e1790338671732}
-                  alt="TaskHive Pro"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_09_e1790338770926}
-                  alt="CareCompass"
-                />
-              </figure>
-            </div>
-            <div className="swiper-slide-content">
-              <figure>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="swiper-slide-image"
-                  src={IMAGES.Logo_Image_03_Replace_This_Fill_e1790338650744}
-                  alt="ContractorConnect"
-                />
-              </figure>
-            </div>
+            {trustedLogos.map((logo) => (
+              <div className="swiper-slide-content" key={logo.alt}>
+                <figure>
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    className={`swiper-slide-image trusted-logo${logo.official ? " trusted-logo--official" : ""}`}
+                    src={logo.src}
+                    width="150"
+                    height="50"
+                    alt={logo.alt}
+                  />
+                </figure>
+              </div>
+            ))}
           </ImageCarousel>
         </div>
       </div>

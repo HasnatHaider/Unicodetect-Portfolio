@@ -3,7 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import assert from "node:assert/strict";
 
-const origin = "https://unicodetech-react.vercel.app";
+const origin = "https://unicodetech-dev.vercel.app";
 const config = JSON.parse(await readFile("vercel.json", "utf8"));
 const browser = await chromium.launch({
   ...(process.env.CHROME_EXECUTABLE

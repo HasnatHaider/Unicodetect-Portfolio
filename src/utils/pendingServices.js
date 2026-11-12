@@ -104,8 +104,6 @@ export const pendingServices = [
     painPoint:
       "Still managing critical workflows across spreadsheets and manual handoffs?",
     heroImage: "customSoftwareDevelopmentHeroBg",
-    review: "Their team was professional, responsive, and truly understood our needs. The final product exceeded our expectations in both quality and functionality.",
-    reviewAttribution: "CareCompass",
     caseStudyLink: "/case-studies/carecompass",
   },
   {
@@ -220,8 +218,7 @@ export const pendingServices = [
     painPoint:
       "Sales and operations working from different data, with no single source of truth?",
     heroImage: "crmErpSolutionsHeroBg",
-    review: "They are highly professional and always follow proper procedures. What I appreciate the most is their Agile Methodology. Highly recommended!",
-    reviewAttribution: "— SaltSpace",
+    reviewCardId: "caseyteuchert",
     caseStudyLink: "/case-studies",
   },
   {
@@ -338,8 +335,6 @@ export const pendingServices = [
     ctaLabel: "Book a Strategy Call",
     painPoint: "Every deployment a manual process \u2014 risky, slow, and hard to roll back?",
     heroImage: "cloudDevOpsHeroBg",
-    review: "Their team was professional, responsive, and truly understood our needs. The final product exceeded our expectations in both quality and functionality.",
-    reviewAttribution: "— CareCompass",
     caseStudyLink: "/case-studies",
   },
   {
@@ -454,8 +449,7 @@ export const pendingServices = [
     painPoint:
       "Are bugs reaching customers before your team sees them?",
     heroImage: "qaTestingHeroBg",
-    review: "Their team delivered exactly what we needed \u2014 a stable, well-tested product.",
-    reviewAttribution: "— Spin The Night",
+    reviewCardId: "flaviusdarity",
     caseStudyLink: "/case-studies/spin-the-night",
   },
   {
@@ -568,8 +562,7 @@ export const pendingServices = [
     painPoint:
       "Need more engineering capacity but not ready to build an in-house team?",
     heroImage: "dedicatedProductTeamsHeroBg",
-    review: "They are highly professional and always follow proper procedures. What I appreciate the most is their Agile Methodology. Highly recommended!",
-    reviewAttribution: "SaltSpace",
+    reviewCardId: "umarayazbheda",
     caseStudyLink: "/case-studies",
   },
   {
@@ -684,8 +677,6 @@ export const pendingServices = [
     painPoint:
       "Have a product idea but not sure what to build first \u2014 or if it\u2019ll work?",
     heroImage: "productDiscoveryStrategyHeroBg",
-    review: "Their team has been involved in development, troubleshooting, improvements, and ongoing technical support.",
-    reviewAttribution: "— DailyDigest",
     caseStudyLink: "/case-studies",
   },
   {
@@ -800,8 +791,6 @@ export const pendingServices = [
     painPoint:
       "Has nobody owned the app since launch?",
     heroImage: "maintenanceSupportHeroBg",
-    review: "Their team has been involved in development, troubleshooting, improvements, and ongoing technical support.",
-    reviewAttribution: "DailyDigest",
     caseStudyLink: "/case-studies/daily-digest",
   },
   {

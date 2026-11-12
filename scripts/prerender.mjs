@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { render, imageStyles } from "../.prerender/entry-server.js";
 
-const base = "https://unicodetech-react.vercel.app";
+const base = "https://unicodetech-dev.vercel.app";
 const manifest = JSON.parse(await readFile("dist/.vite/manifest.json", "utf8"));
 const appSource = await readFile("src/App.jsx", "utf8");
 const pathSource = await readFile("src/routes/paths.js", "utf8");

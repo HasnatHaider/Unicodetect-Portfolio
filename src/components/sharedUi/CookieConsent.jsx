@@ -21,11 +21,13 @@ const CookieConsent = () => {
   const handleAccept = () => {
     grantAnalyticsConsent();
     setVisible(false);
+    window.dispatchEvent(new Event("uc-consent-choice"));
   };
 
   const handleDecline = () => {
     revokeAnalyticsConsent();
     setVisible(false);
+    window.dispatchEvent(new Event("uc-consent-choice"));
   };
 
   if (!visible) return null;

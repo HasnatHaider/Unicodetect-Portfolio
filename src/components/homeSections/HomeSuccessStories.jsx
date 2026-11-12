@@ -2,6 +2,7 @@ import { paths } from "../../routes/paths";
 import { ArrowUpRight } from "lucide-react";
 import { IMAGES } from "../../utils/Constant";
 import { SiteLink } from "../sharedUi/Interactive";
+import ClientLogo from "../sharedUi/ClientLogo";
 const HomeSuccessStories = () => {
   return (
     <div
@@ -103,9 +104,12 @@ const HomeSuccessStories = () => {
                       <div className="heading">MULTI-PRODUCT PARTNERSHIP</div>
                     </div>
                   </div>
-                  <div className="layout-item home-success-stories__bms-computer-management content-block block-heading">
-                    <div className="content-inner">
-                      <div className="heading">BMS Computer Management</div>
+                  <div className="client-logo-lockup bms-client-lockup">
+                    <ClientLogo id="bms" size={32} variant="plain" />
+                    <div className="layout-item home-success-stories__bms-computer-management content-block block-heading">
+                      <div className="content-inner">
+                        <div className="heading">BMS Computer Management</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -199,33 +203,18 @@ const HomeSuccessStories = () => {
                     </div>
                   </div>
                   <div className="layout-item home-success-stories__layout-17 layout-full layout-flex layout is-loaded">
-                    <div className="layout-item home-success-stories__layout-19 layout-full layout-flex layout is-loaded">
-                      <div className="layout-item home-success-stories__qz width-custom content-block block-heading">
-                        <div className="content-inner">
-                          <div className="heading">QZ</div>
-                        </div>
-                      </div>
-                      <div className="layout-item home-success-stories__quickzip-customer content-block block-heading">
-                        <div className="content-inner">
-                          <div className="heading">QuickZip</div>
-                        </div>
-                      </div>
-                      <div className="layout-item home-success-stories__connected-role content-block block-heading">
-                        <div className="content-inner">
-                          <div className="heading">MOBILE + WEB</div>
-                        </div>
-                      </div>
-                    </div>{" "}
                     <div className="layout-item home-success-stories__layout-24 layout-full layout-flex layout is-loaded">
                       <div className="layout-item home-success-stories__layout-25 layout-full layout-flex layout is-loaded">
-                        <div className="layout-item home-success-stories__th width-custom content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">TH</div>
-                          </div>
-                        </div>
-                        <div className="layout-item home-success-stories__taskhive content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">TaskHive Pro</div>
+                        <div className="client-logo-lockup bms-app-lockup">
+                          <ClientLogo
+                            id="taskhive"
+                            size={40}
+                            initials="TH"
+                          />
+                          <div className="layout-item home-success-stories__taskhive content-block block-heading">
+                            <div className="content-inner">
+                              <div className="heading">TaskHive Pro</div>
+                            </div>
                           </div>
                         </div>
                         <div className="layout-item home-success-stories__mobile-web content-block block-heading">
@@ -235,18 +224,18 @@ const HomeSuccessStories = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="layout-item home-success-stories__layout-26 layout-full layout-flex layout is-loaded">
                     <div className="layout-item home-success-stories__layout-27 layout-full layout-flex layout is-loaded">
                       <div className="layout-item home-success-stories__layout-28 layout-full layout-flex layout is-loaded">
-                        <div className="layout-item home-success-stories__cc width-custom content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">CC</div>
-                          </div>
-                        </div>
-                        <div className="layout-item home-success-stories__carecompass content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">CareCompass</div>
+                        <div className="client-logo-lockup bms-app-lockup">
+                          <ClientLogo
+                            id="carecompass"
+                            size={40}
+                            initials="CC"
+                          />
+                          <div className="layout-item home-success-stories__carecompass content-block block-heading">
+                            <div className="content-inner">
+                              <div className="heading">CareCompass</div>
+                            </div>
                           </div>
                         </div>
                         <div className="layout-item home-success-stories__mobile-web-2 content-block block-heading">
@@ -256,16 +245,20 @@ const HomeSuccessStories = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div className="layout-item home-success-stories__layout-26 layout-full layout-flex layout is-loaded">
                     <div className="layout-item home-success-stories__layout-29 layout-full layout-flex layout is-loaded">
                       <div className="layout-item home-success-stories__layout-30 layout-full layout-flex layout is-loaded">
-                        <div className="layout-item home-success-stories__dd width-custom content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">DD</div>
-                          </div>
-                        </div>
-                        <div className="layout-item home-success-stories__dailydigest content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">DailyDigest</div>
+                        <div className="client-logo-lockup bms-app-lockup">
+                          <ClientLogo
+                            id="dailydigest"
+                            size={40}
+                            initials="DD"
+                          />
+                          <div className="layout-item home-success-stories__dailydigest content-block block-heading">
+                            <div className="content-inner">
+                              <div className="heading">DailyDigest</div>
+                            </div>
                           </div>
                         </div>
                         <div className="layout-item home-success-stories__mobile-web-3 content-block block-heading">
@@ -277,20 +270,41 @@ const HomeSuccessStories = () => {
                     </div>
                     <div className="layout-item home-success-stories__layout-31 layout-full layout-flex layout is-loaded">
                       <div className="layout-item home-success-stories__layout-32 layout-full layout-flex layout is-loaded">
-                        <div className="layout-item home-success-stories__co width-custom content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">CO</div>
-                          </div>
-                        </div>
-                        <div className="layout-item home-success-stories__contractorconnect content-block block-heading">
-                          <div className="content-inner">
-                            <div className="heading">ContractorConnect</div>
+                        <div className="client-logo-lockup bms-app-lockup">
+                          <ClientLogo
+                            id="contractorconnect"
+                            size={40}
+                            initials="CO"
+                          />
+                          <div className="layout-item home-success-stories__contractorconnect content-block block-heading">
+                            <div className="content-inner">
+                              <div className="heading">ContractorConnect</div>
+                            </div>
                           </div>
                         </div>
                         <div className="layout-item home-success-stories__mobile-web-4 content-block block-heading">
                           <div className="content-inner">
                             <div className="heading">MOBILE + WEB</div>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="layout-item home-success-stories__layout-19 layout-full layout-flex layout is-loaded">
+                      <div className="client-logo-lockup bms-app-lockup">
+                        <ClientLogo
+                          id="quickzip"
+                          size={40}
+                          initials="QZ"
+                        />
+                        <div className="layout-item home-success-stories__quickzip-customer content-block block-heading">
+                          <div className="content-inner">
+                            <div className="heading">QuickZip</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="layout-item home-success-stories__connected-role content-block block-heading">
+                        <div className="content-inner">
+                          <div className="heading">MOBILE + WEB</div>
                         </div>
                       </div>
                     </div>
@@ -562,7 +576,7 @@ const HomeSuccessStories = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="layout-item home-success-stories__you-brought-my-vision-for-iconic-b width-custom content-block block-heading">
+                    <div className="layout-item home-success-stories__you-brought-my-vision-for-iconic-b width-custom content-block block-heading reviewMargin">
                       <div className="content-inner">
                         <div className="heading">
                           <span

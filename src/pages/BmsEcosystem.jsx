@@ -6,6 +6,7 @@ import { SiteLink } from "../components/sharedUi/Interactive";
 import PageBreadcrumb from "../components/sharedUi/PageBreadcrumb";
 import CaseStudyCard from "../components/caseStudySections/CaseStudyCard";
 import { CompanyHeading } from "../components/companySections/CompanyUi";
+import ClientLogo from "../components/sharedUi/ClientLogo";
 import "../assets/styles/pages/caseStudies.css";
 import "../assets/styles/pages/bmsEcosystem.css";
 
@@ -29,7 +30,10 @@ export default function BmsEcosystem() {
       >
         <div className="company-container">
           <PageBreadcrumb />
-          <span className="company-eyebrow">MULTI-PRODUCT PARTNERSHIP</span>
+          <div className="client-logo-lockup bms-hero-client">
+            <ClientLogo id="bms" size={64} />
+            <span className="company-eyebrow">MULTI-PRODUCT PARTNERSHIP</span>
+          </div>
           <h1 id="bms-title" className="service-hero-title">
             The BMS product ecosystem.
           </h1>
@@ -95,6 +99,7 @@ export default function BmsEcosystem() {
       </section>
       <section className="company-section" aria-labelledby="quickzip-title">
         <div className="company-container">
+          <ClientLogo id="quickzip" size={56} className="bms-quickzip-icon" />
           <CompanyHeading
             eyebrow="3-APP LOGISTICS SUITE · MOBILE + WEB"
             title="QuickZip (Customer, Vendor & Driver Apps)"

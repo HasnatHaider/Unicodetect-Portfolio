@@ -720,6 +720,10 @@
   gap: 16px;
 }
 
+.ui-ux-hero-action {
+  justify-content: flex-start !important;
+}
+
 .uiux-cta>.uiux-container>.uiux-cta-note {
   margin: 24px auto 0;
   color: #8b8d97;

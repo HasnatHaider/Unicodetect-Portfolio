@@ -4,6 +4,7 @@ import UiUxDesignPhilosophy from "../components/uiUxDesignServiceSections/UiUxDe
 import UiUxCapabilities from "../components/uiUxDesignServiceSections/UiUxCapabilities";
 import UiUxProcess from "../components/uiUxDesignServiceSections/UiUxProcess";
 import UiUxCaseStudies from "../components/uiUxDesignServiceSections/UiUxCaseStudies";
+import UiUxClientReview from "../components/uiUxDesignServiceSections/UiUxClientReview";
 import UiUxMetrics from "../components/uiUxDesignServiceSections/UiUxMetrics";
 import UiUxDeliverables from "../components/uiUxDesignServiceSections/UiUxDeliverables";
 import UiUxFaq from "../components/uiUxDesignServiceSections/UiUxFaq";
@@ -23,6 +24,7 @@ const UiUxDesign = () => {
       <UiUxCapabilities />
       <UiUxProcess />
       <UiUxCaseStudies />
+      <UiUxClientReview />
       <UiUxMetrics />
       <UiUxDeliverables />
       <UiUxFaq />

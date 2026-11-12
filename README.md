@@ -2,7 +2,7 @@
 
 UnicodeTech's company and software-services website, built with React 19, JavaScript/JSX, Vite 8, React Router 7 and plain CSS.
 
-Website: [unicodetech-react.vercel.app](https://unicodetech-react.vercel.app/)
+Website: [unicodetech-dev.vercel.app](https://unicodetech-dev.vercel.app/)
 
 ## Requirements and setup
 
@@ -17,15 +17,15 @@ Vite serves the frontend during development. The contact endpoint requires Verce
 
 ## Commands
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the Vite frontend development server. |
-| `npm run build` | Build client assets and generate HTML for all 27 primary routes and the 404 page. |
-| `npm run preview` | Preview the generated static site; Vercel API functions are not included. |
-| `npm run lint` | Run Oxlint. |
-| `node scripts/verify-browser.mjs` | Check the generated build in Playwright at mobile and desktop widths. Run the build first. |
-| `node scripts/optimize-images.mjs` | Regenerate responsive WebP variants from original PNG artwork. |
-| `npm test` | Run local contact and generated-output tests, if the ignored `tests/` folder is present. Run the build first. |
+| Command                            | Purpose                                                                                                       |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `npm run dev`                      | Start the Vite frontend development server.                                                                   |
+| `npm run build`                    | Build client assets and generate HTML for all 27 primary routes and the 404 page.                             |
+| `npm run preview`                  | Preview the generated static site; Vercel API functions are not included.                                     |
+| `npm run lint`                     | Run Oxlint.                                                                                                   |
+| `node scripts/verify-browser.mjs`  | Check the generated build in Playwright at mobile and desktop widths. Run the build first.                    |
+| `node scripts/optimize-images.mjs` | Regenerate responsive WebP variants from original PNG artwork.                                                |
+| `npm test`                         | Run local contact and generated-output tests, if the ignored `tests/` folder is present. Run the build first. |
 
 The browser-check script serves built files through request interception at the production origin. It starts no web server, blocks external requests and mocks contact submissions. These checks do not test the current live deployment or send email. Install Playwright Chromium with `npx playwright install chromium`, or supply an existing browser executable using `CHROME_EXECUTABLE`.
 
@@ -33,23 +33,23 @@ The browser-check script serves built files through request interception at the 
 
 The site has 27 primary URLs: Home, About, Contact, Case Studies, five project-detail pages, BMS Ecosystem, two legal pages and 15 service pages.
 
-| Service | Route |
-| --- | --- |
-| AI Agents & Automation | `/ai-agents-automation` |
-| SaaS Development | `/saas-development` |
-| Mobile & Web Engineering | `/mobile-web-engineering` |
-| Shopify & E-commerce | `/shopify-e-commerce` |
-| UI/UX Design | `/ui-ux-design` |
-| Web Development | `/web-development` |
-| WordPress Development | `/wordpress-development` |
-| API & Systems Integration | `/api-systems-integration` |
-| Custom Software Development | `/custom-software-development` |
-| CRM & ERP Solutions | `/crm-erp-solutions` |
-| Cloud & DevOps | `/cloud-devops` |
-| QA & Testing | `/qa-testing` |
-| Dedicated Product Teams | `/dedicated-product-teams` |
-| Product Discovery & Strategy | `/product-discovery-strategy` |
-| Maintenance & Support | `/maintenance-support` |
+| Service                      | Route                          |
+| ---------------------------- | ------------------------------ |
+| AI Agents & Automation       | `/ai-agents-automation`        |
+| SaaS Development             | `/saas-development`            |
+| Mobile & Web Engineering     | `/mobile-web-engineering`      |
+| Shopify & E-commerce         | `/shopify-e-commerce`          |
+| UI/UX Design                 | `/ui-ux-design`                |
+| Web Development              | `/web-development`             |
+| WordPress Development        | `/wordpress-development`       |
+| API & Systems Integration    | `/api-systems-integration`     |
+| Custom Software Development  | `/custom-software-development` |
+| CRM & ERP Solutions          | `/crm-erp-solutions`           |
+| Cloud & DevOps               | `/cloud-devops`                |
+| QA & Testing                 | `/qa-testing`                  |
+| Dedicated Product Teams      | `/dedicated-product-teams`     |
+| Product Discovery & Strategy | `/product-discovery-strategy`  |
+| Maintenance & Support        | `/maintenance-support`         |
 
 Project details cover Spin the Night, CareCompass, Daily Digest, Contractor Connect and Task Hive at `/case-studies/:slug`. Six legacy aliases have permanent redirects in `vercel.json`.
 
@@ -57,24 +57,24 @@ Shared features include a responsive Services menu, Calendly scheduling, contact
 
 ## Project structure
 
-| Location | Responsibility |
-| --- | --- |
-| `src/main.jsx` | Browser entry, routing providers, notifications, styles and hydration. |
-| `src/App.jsx`, `src/routes/paths.js` | Route components and named paths. |
-| `src/pages/` | Page composition and metadata. |
-| `src/layouts/AppLayout.jsx` | Shared header, main content, footer and cursor. |
-| `src/components/` | Home/service sections, navigation and reusable UI. |
-| `src/components/professionalServiceSections/ServiceSections.jsx` | Shared professional-service sections and hero image binding. |
-| `src/contexts/`, `src/hooks/` | Hero/navigation state, metadata and motion behavior. |
-| `src/utils/` | Company, legal, project and service content; image registry and metadata helpers. |
-| `src/assets/styles/` | Foundation, shared components, page styles and responsive rules. |
-| `src/assets/images/` | SVG artwork, original images, WebP variants and legacy font assets. |
-| `public/` | Favicon, 1200×630 social image, fonts, robots and sitemap. |
-| `src/entry-server.jsx`, `scripts/prerender.mjs` | Static HTML rendering and route-specific head generation. |
-| `api/contact.js` | Vercel contact-function entry. |
-| `server/` | Server-side contact validation, abuse controls and email formatting. |
-| `src/services/` | Browser contact requests, Calendly loader and optional Axios helper. |
-| `vite.config.js`, `vercel.json` | Build, asset optimization, hosting, redirects and security headers. |
+| Location                                                         | Responsibility                                                                    |
+| ---------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `src/main.jsx`                                                   | Browser entry, routing providers, notifications, styles and hydration.            |
+| `src/App.jsx`, `src/routes/paths.js`                             | Route components and named paths.                                                 |
+| `src/pages/`                                                     | Page composition and metadata.                                                    |
+| `src/layouts/AppLayout.jsx`                                      | Shared header, main content, footer and cursor.                                   |
+| `src/components/`                                                | Home/service sections, navigation and reusable UI.                                |
+| `src/components/professionalServiceSections/ServiceSections.jsx` | Shared professional-service sections and hero image binding.                      |
+| `src/contexts/`, `src/hooks/`                                    | Hero/navigation state, metadata and motion behavior.                              |
+| `src/utils/`                                                     | Company, legal, project and service content; image registry and metadata helpers. |
+| `src/assets/styles/`                                             | Foundation, shared components, page styles and responsive rules.                  |
+| `src/assets/images/`                                             | SVG artwork, original images, WebP variants and legacy font assets.               |
+| `public/`                                                        | Favicon, 1200×630 social image, fonts, robots and sitemap.                        |
+| `src/entry-server.jsx`, `scripts/prerender.mjs`                  | Static HTML rendering and route-specific head generation.                         |
+| `api/contact.js`                                                 | Vercel contact-function entry.                                                    |
+| `server/`                                                        | Server-side contact validation, abuse controls and email formatting.              |
+| `src/services/`                                                  | Browser contact requests, Calendly loader and optional Axios helper.              |
+| `vite.config.js`, `vercel.json`                                  | Build, asset optimization, hosting, redirects and security headers.               |
 
 Edit copy and section order in the corresponding page/component. Professional-service content lives in `src/utils/pendingServices.js`; company information is in `companyContent.js`, and case-study content is in `caseStudies.js` and `projectDetails.js`. Image imports are registered in `src/utils/Constant.js`; CSS background keys and responsive image mappings have separate helpers.
 
@@ -94,13 +94,13 @@ The browser obtains a signed form token and submits to `/api/contact`. The serve
 
 Set these **server-only** environment variables using `.env.example` as the template:
 
-| Variable | Purpose |
-| --- | --- |
-| `PUSH_API_KEY` | Newly issued credential for the email provider. |
-| `CONTACT_TOKEN_SECRET` | Random secret of at least 32 characters for signing form tokens. |
-| `UPSTASH_REDIS_REST_URL` | Shared Redis REST endpoint. |
-| `UPSTASH_REDIS_REST_TOKEN` | Credential for that Redis endpoint. |
-| `SITE_URL` | Exact trusted origin; defaults to `https://unicodetech-react.vercel.app`. |
+| Variable                   | Purpose                                                                 |
+| -------------------------- | ----------------------------------------------------------------------- |
+| `PUSH_API_KEY`             | Newly issued credential for the email provider.                         |
+| `CONTACT_TOKEN_SECRET`     | Random secret of at least 32 characters for signing form tokens.        |
+| `UPSTASH_REDIS_REST_URL`   | Shared Redis REST endpoint.                                             |
+| `UPSTASH_REDIS_REST_TOKEN` | Credential for that Redis endpoint.                                     |
+| `SITE_URL`                 | Exact trusted origin; defaults to `https://unicodetech-dev.vercel.app`. |
 
 Never prefix secrets with `VITE_`, because Vite-prefixed values can be included in browser bundles. Revoke any previously exposed provider credential and remove the legacy `VITE_PUSH_APIKEY` deployment variable. Redis provisioning and credential rotation are external setup steps, not automatic build actions.
 

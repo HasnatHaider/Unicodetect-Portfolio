@@ -5,6 +5,10 @@ import usePageMetadata from "../hooks/usePageMetadata";
 import { caseStudyProjects } from "../utils/caseStudies";
 import PageBreadcrumb from "../components/sharedUi/PageBreadcrumb";
 import { projectDetails } from "../utils/projectDetails";
+import { clientReviews } from "../utils/clientReviews";
+import ReviewCard from "../components/sharedUi/ReviewCard";
+import ClientLogo from "../components/sharedUi/ClientLogo";
+import { clientLogos } from "../utils/clientLogos";
 import { IMAGES } from "../utils/Constant";
 import { paths } from "../routes/paths";
 import { SiteLink } from "../components/sharedUi/Interactive";
@@ -19,7 +23,8 @@ function ProjectArtwork({ project }) {
       width="1024"
       height="576"
       alt={`${project.title} project artwork`}
-      fetchPriority="high"
+      fetchPriority={project.heroArtInBackground ? undefined : "high"}
+      loading={project.heroArtInBackground ? "lazy" : undefined}
       decoding="async"
     />
   ) : (
@@ -44,11 +49,15 @@ function ProjectContent({ project, details }) {
   const builtItems = details.built || details.features || [];
   const scopeItems = details.services || details.workflow || [];
   const hasMetrics = Array.isArray(details.metrics) && details.metrics.length > 0;
+  const clientCompany = clientLogos[project.clientLogoId];
+  const reviewCard = details.reviewCardId
+    ? clientReviews[details.reviewCardId]
+    : null;
 
   return (
     <div className="page-content project-detail-page">
       <section
-        className="project-detail-hero service-hero-theme"
+        className={`project-detail-hero service-hero-theme${project.heroArtInBackground ? " project-detail-hero--art-bg" : ""}`}
         aria-labelledby="project-detail-title"
         style={{
           ...(project.heroBgKey
@@ -70,9 +79,12 @@ function ProjectContent({ project, details }) {
             <div>
               <PageBreadcrumb />
               <span className="project-detail-eyebrow">{project.category}</span>
-              <h1 id="project-detail-title" className="service-hero-title">
-                {project.title}
-              </h1>
+              <div className="client-logo-lockup project-detail-title-row">
+                {project.logoId && <ClientLogo id={project.logoId} size={56} />}
+                <h1 id="project-detail-title" className="service-hero-title">
+                  {project.title}
+                </h1>
+              </div>
               <p className="service-hero-description">{project.description}</p>
               <SiteLink
                 href={`${paths.contact}#project-inquiry`}
@@ -98,6 +110,12 @@ function ProjectContent({ project, details }) {
             <div className="project-detail-narrative-block">
               <span className="project-detail-eyebrow">THE CLIENT</span>
               <h2 id="project-overview-title">About {project.title}</h2>
+              {clientCompany && (
+                <div className="client-logo-lockup project-detail-client">
+                  <ClientLogo id={project.clientLogoId} size={36} />
+                  <span>{clientCompany.name}</span>
+                </div>
+              )}
               <p>{details.client || details.overview}</p>
             </div>
 
@@ -136,8 +154,12 @@ function ProjectContent({ project, details }) {
         aria-labelledby="project-features-title"
       >
         <div className="project-detail-container">
-          <span className="project-detail-eyebrow">WHAT WE BUILT</span>
-          <h2 id="project-features-title">Key product capabilities delivered.</h2>
+          <span className="project-detail-eyebrow">
+            {details.capabilitiesEyebrow || "WHAT WE BUILT"}
+          </span>
+          <h2 id="project-features-title">
+            {details.capabilitiesTitle || "Key product capabilities delivered."}
+          </h2>
           <div className="project-detail-features">
             {builtItems.map(([title, description], index) => (
               <article key={title}>
@@ -175,8 +197,12 @@ function ProjectContent({ project, details }) {
         aria-labelledby="project-results-title"
       >
         <div className="project-detail-container">
-          <span className="project-detail-eyebrow">RESULTS &amp; OUTCOME</span>
-          <h2 id="project-results-title">Production impact</h2>
+          <span className="project-detail-eyebrow">
+            {details.outcomeEyebrow || "RESULTS & OUTCOME"}
+          </span>
+          <h2 id="project-results-title">
+            {details.outcomeTitle || "Production impact"}
+          </h2>
           <p>{details.results || details.focus}</p>
           {hasMetrics && (
             <div className="project-detail-metrics-grid" role="list">
@@ -199,7 +225,19 @@ function ProjectContent({ project, details }) {
         </div>
       </section>
 
-      {details.review && (
+      {reviewCard ? (
+        <section
+          className="project-detail-section project-detail-review"
+          aria-labelledby="project-review-title"
+        >
+          <div className="project-detail-container">
+            <span className="project-detail-eyebrow reviewHeader" id="project-review-title">
+              WHAT THE CLIENT SAID
+            </span>
+            <ReviewCard review={reviewCard} variant="case-study" />
+          </div>
+        </section>
+      ) : details.review ? (
         <section
           className="project-detail-section project-detail-review"
           aria-labelledby="project-review-title"
@@ -216,7 +254,7 @@ function ProjectContent({ project, details }) {
             </blockquote>
           </div>
         </section>
-      )}
+      ) : null}
 
       <section
         className="project-detail-section project-detail-next"

@@ -1,3 +1,5 @@
+import ReviewCard from "../sharedUi/ReviewCard";
+import { clientReviews } from "../../utils/clientReviews";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -50,10 +52,10 @@ export const ServicePage = ({ service, children }) => {
       provider: {
         "@type": "Organization",
         name: "UnicodeTech",
-        url: "https://unicodetech-react.vercel.app",
+        url: "https://unicodetech-dev.vercel.app",
       },
       description: service.description,
-      url: `https://unicodetech-react.vercel.app/${service.slug}`,
+      url: `https://unicodetech-dev.vercel.app/${service.slug}`,
     },
   });
   return (
@@ -325,13 +327,20 @@ export const ServiceFaq = ({
 );
 export const ServiceCta = ({ service, layout = "centered" }) => (
   <>
-    {service.review && (
+    {(service.reviewCardId || service.review) && (
       <section className="service-section professional-service-review">
         <div className="service-container">
-          <blockquote className="professional-service-quote">
-            <p>"{service.review}"</p>
-            <footer>{service.reviewAttribution}</footer>
-          </blockquote>
+          {service.reviewCardId ? (
+            <ReviewCard
+              review={clientReviews[service.reviewCardId]}
+              variant="case-study"
+            />
+          ) : (
+            <blockquote className="professional-service-quote">
+              <p>"{service.review}"</p>
+              <footer>{service.reviewAttribution}</footer>
+            </blockquote>
+          )}
           {service.caseStudyLink && (
             <SiteLink
               href={service.caseStudyLink}

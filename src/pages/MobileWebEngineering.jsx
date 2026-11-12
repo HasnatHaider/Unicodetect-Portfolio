@@ -9,7 +9,8 @@ import MobileGetStarted from "../components/mobileWebEngineeringServiceSections/
 
 const CLIENT_REVIEWS = [
   {
-    quote: "From developing our iOS and Android applications to building the web dashboard and backend infrastructure, UnicodeTech demonstrated strong technical capabilities and a genuine understanding of product development.",
+    quote:
+      "From developing our iOS and Android applications to building the web dashboard and backend infrastructure, UnicodeTech demonstrated strong technical capabilities and a genuine understanding of product development.",
     attribution: "DailyDigest",
   },
   {
@@ -21,7 +22,8 @@ const CLIENT_REVIEWS = [
 const MobileWebEngineering = () => {
   usePageMetadata({
     title: "Mobile & Web Engineering Services | UnicodeTech",
-    description: "Expert mobile and web engineering from UnicodeTech. We build React Native apps, responsive web applications, and cross-platform digital products.",
+    description:
+      "Expert mobile and web engineering from UnicodeTech. We build React Native apps, responsive web applications, and cross-platform digital products.",
     bodyClass: "site site-design mobile-page-body",
   });
   return (
@@ -30,7 +32,7 @@ const MobileWebEngineering = () => {
       <MobileCapabilities />
       <MobileProcess />
       <MobileCaseStudy />
-      <section className="service-section mobile-client-reviews" aria-label="Client reviews">
+      {/* <section className="service-section mobile-client-reviews" aria-label="Client reviews">
         <div className="service-container mobile-reviews-grid">
           {CLIENT_REVIEWS.map((r) => (
             <blockquote key={r.attribution} className="mobile-review-card">
@@ -39,7 +41,7 @@ const MobileWebEngineering = () => {
             </blockquote>
           ))}
         </div>
-      </section>
+      </section> */}
       <MobileFaqSection />
       <MobileGetStarted />
     </div>

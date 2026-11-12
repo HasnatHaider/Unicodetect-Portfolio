@@ -3,13 +3,17 @@ import { ArrowUpRight, Workflow } from "lucide-react";
 import { IMAGES } from "../../utils/Constant";
 import { SiteLink } from "../sharedUi/Interactive";
 import { paths } from "../../routes/paths";
+import ClientLogo from "../sharedUi/ClientLogo";
 
 export default function CaseStudyCard({ project }) {
   return (
     <article className="portfolio-project" id={`project-${project.slug}`}>
       <div className="portfolio-project-content">
         <span className="portfolio-category">{project.category}</span>
-        <h2>{project.title}</h2>
+        <h2 className="client-logo-lockup portfolio-project-title">
+          {project.logoId && <ClientLogo id={project.logoId} size={44} />}
+          <span>{project.title}</span>
+        </h2>
         <p>{project.description}</p>
         <ul
           className="portfolio-stack"
@@ -36,6 +40,11 @@ export default function CaseStudyCard({ project }) {
         {project.imageKey ? (
           <ResponsiveImage
             src={IMAGES[project.imageKey]}
+            srcSet={
+              project.imageSmallKey
+                ? `${IMAGES[project.imageSmallKey]} 480w, ${IMAGES[project.imageKey]} 1024w`
+                : undefined
+            }
             alt={`${project.title} project artwork`}
             width="1024"
             height="576"

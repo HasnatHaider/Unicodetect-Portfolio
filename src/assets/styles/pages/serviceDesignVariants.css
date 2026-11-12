@@ -2,43 +2,47 @@
   background: #0d1016;
   color: #fff;
 }
+
 .professional-service-capability-section p {
   color: #a4a8b2;
 }
+
 .professional-service-handover {
   background: #0d1016;
   color: #fff;
 }
+
 .professional-service-handover p {
   color: #a4a8b2;
 }
+
 .service-deliverable-number {
   display: none;
 }
+
 .service-design-customSoftwareDevelopment .professional-service-hero {
   background-color: #faf8f5;
 }
+
 .capabilities-showcase .professional-service-capabilities {
   grid-template-columns: 1.1fr 1fr;
 }
+
 .capabilities-showcase .professional-service-capability:first-child {
   grid-row: span 3;
   justify-content: space-between;
   background: linear-gradient(145deg, #262c39, #171b24);
   min-height: 530px;
 }
-.service-design-customSoftwareDevelopment
-  .capabilities-showcase
-  .professional-service-capability:first-child {
+
+.service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child {
   background-color: #0d1016;
   background-image:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       transparent 0%,
       transparent 40%,
       rgb(13 16 22 / 65%) 65%,
-      #0d1016 88%
-    ),
+      #0d1016 88%),
     var(--image-businessApplicationsCardBg);
   background-position:
     center,
@@ -46,87 +50,99 @@
   background-size: cover, contain;
   background-repeat: no-repeat;
 }
-.service-design-customSoftwareDevelopment
-  .capabilities-showcase
-  .professional-service-capability:first-child
-  .professional-service-card-top {
+
+.service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child .professional-service-card-top {
   text-shadow: 0 1px 6px #000;
 }
-.service-design-customSoftwareDevelopment
-  .capabilities-showcase
-  .professional-service-capability:first-child
-  p {
+
+.service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child p {
   color: #d5d9e1;
 }
+
 .capabilities-showcase .professional-service-capability:first-child h3 {
   font-size: 38px;
   max-width: 300px;
 }
+
 .capabilities-showcase .professional-service-capability:not(:first-child) {
   flex-direction: row;
   gap: 24px;
   min-height: 0;
   border-radius: 12px;
 }
-.capabilities-showcase
-  .professional-service-capability:not(:first-child)
-  .professional-service-card-top {
+
+.capabilities-showcase .professional-service-capability:not(:first-child) .professional-service-card-top {
   flex-direction: column-reverse;
   justify-content: flex-end;
   gap: 14px;
   margin: 0;
 }
+
 .process-rail .professional-service-steps {
   gap: 0;
 }
+
 .process-rail .professional-service-steps li {
   padding: 28px;
   border-left: 1px solid #e6dbd3;
 }
+
 .process-rail .professional-service-steps li:first-child {
   border-left: 0;
   padding-left: 0;
 }
+
 .scenario-blueprint {
   background: #edeff2;
 }
+
 .scenario-blueprint .professional-service-delivery-plan {
   border-radius: 0;
   border-color: #d4d8df;
   background: #f8f9fb;
   box-shadow: 12px 12px 0 #dce0e7;
 }
+
 .scenario-blueprint .professional-service-plan-top {
   color: #414959;
 }
+
 .cta-dark {
   background: #10131a;
   color: #fff;
 }
+
 .cta-dark p {
   color: #a4a8b2;
 }
+
 .service-design-crmErpSolutions .professional-service-hero {
   background-color: #f5f2ed;
 }
+
 .service-design-crmErpSolutions .professional-service-hero-copy {
   margin-left: 0;
   width: 48%;
 }
+
 .capabilities-matrix {
   background: #fff;
   color: var(--service-ink);
 }
+
 .capabilities-matrix p {
   color: var(--service-muted);
 }
+
 .capabilities-matrix .professional-service-heading {
   max-width: 760px;
 }
+
 .capabilities-matrix .professional-service-capabilities {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
 }
+
 .capabilities-matrix .professional-service-capability {
   background: transparent;
   border: 0;
@@ -134,22 +150,28 @@
   border-radius: 0;
   padding: 12px 26px;
 }
+
 .capabilities-matrix .professional-service-capability:first-child {
   border-left: 0;
   padding-left: 0;
 }
+
 .capabilities-matrix h3 {
   font-size: 21px;
 }
+
 .scenario-connected {
   background: #f0e9df;
 }
+
 .scenario-connected .professional-service-scenario-grid {
   display: block;
 }
+
 .scenario-connected .professional-service-heading {
   max-width: 850px;
 }
+
 .scenario-connected .professional-service-delivery-plan {
   margin-top: 32px;
   border: 0;
@@ -158,44 +180,53 @@
   box-shadow: none;
   max-width: none;
 }
+
 .scenario-connected .professional-service-plan-top {
   display: none;
 }
+
 .scenario-connected ol {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
+
 .scenario-connected li {
   border: 0;
   border-top: 2px solid #e3b69d;
   align-items: flex-start;
   padding: 24px 0;
 }
+
 .scenario-connected .professional-service-plan-note {
   border: 0;
   padding-top: 0;
 }
-.process-timeline > .service-container {
+
+.process-timeline>.service-container {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 70px;
 }
+
 .process-timeline .professional-service-steps {
   grid-template-columns: 1fr;
   margin-top: 0 !important;
   gap: 0;
 }
+
 .process-timeline .professional-service-steps li {
   display: flex;
   gap: 24px;
   padding: 0 0 32px;
   border: 0;
 }
+
 .process-timeline .professional-service-step-number {
   flex: 0 0 44px;
   position: relative;
 }
+
 .process-timeline li:not(:last-child) .professional-service-step-number::after {
   content: "";
   width: 1px;
@@ -205,6 +236,7 @@
   top: 44px;
   left: 22px;
 }
+
 .handover-light,
 .handover-editorial,
 .handover-numbered,
@@ -212,85 +244,97 @@
   background: #fff;
   color: var(--service-ink);
 }
-:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles)
-  p {
+
+:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles) p {
   color: var(--service-muted);
 }
-:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles)
-  .professional-service-deliverables
-  li {
+
+:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles) .professional-service-deliverables li {
   border-color: #e8e4df;
 }
-:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles)
-  .professional-service-toolbox {
+
+:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles) .professional-service-toolbox {
   border-color: #e8e4df;
 }
-:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles)
-  .professional-service-toolbox
-  li {
+
+:is(.handover-light, .handover-editorial, .handover-numbered, .handover-tiles) .professional-service-toolbox li {
   border-color: #dedede;
   background: #ffffff;
   color: #454852;
 }
+
 .faq-centered .professional-service-faq-grid {
   display: block;
 }
+
 .faq-centered .professional-service-heading {
   text-align: center;
   margin: 0 auto 36px;
 }
+
 .faq-centered .professional-service-disclosure {
   border-radius: 0;
   border-width: 0 0 1px;
   background: transparent;
 }
+
 .cta-split {
   text-align: left;
 }
-.cta-split > .service-container {
+
+.cta-split>.service-container {
   max-width: 1360px !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
 }
+
 .cta-split h2 {
   max-width: 800px;
 }
+
 .cta-split p {
   margin: 20px 0 0;
 }
+
 .cta-split .professional-service-button {
   flex-shrink: 0;
 }
+
 .service-design-cloudDevOps .professional-service-hero {
   background-color: #0b111b;
   color: #fff;
 }
-.service-design-cloudDevOps
-  .professional-service-hero
-  :is(.professional-service-intro, .professional-service-hero-note) {
+
+.service-design-cloudDevOps .professional-service-hero :is(.professional-service-intro, .professional-service-hero-note) {
   color: #aeb8c7;
 }
+
 .service-design-cloudDevOps .professional-service-name {
   color: #dfe6ef !important;
 }
+
 .service-design-cloudDevOps .professional-service-text-link {
   color: #fff;
 }
+
 .capabilities-infrastructure {
   background: #111925;
 }
-.capabilities-infrastructure > .service-container {
+
+.capabilities-infrastructure>.service-container {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 60px;
 }
+
 .capabilities-infrastructure .professional-service-capabilities {
   grid-template-columns: 1fr;
   margin-top: 0;
   gap: 12px;
 }
+
 .capabilities-infrastructure .professional-service-capability {
   flex-direction: row;
   gap: 28px;
@@ -299,21 +343,25 @@
   background: #192330;
   border-radius: 12px;
 }
+
 .capabilities-infrastructure .professional-service-card-top {
   flex-direction: column;
   justify-content: flex-start;
   gap: 16px;
   margin-bottom: 0;
 }
+
 .process-terminal {
   background: #edf0f3;
 }
-.process-terminal > .service-container {
+
+.process-terminal>.service-container {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 64px;
   align-items: center;
 }
+
 .process-terminal .professional-service-steps {
   grid-template-columns: 1fr;
   background: #121a26;
@@ -324,6 +372,7 @@
   gap: 0;
   box-shadow: 0 15px 30px #17233612;
 }
+
 .process-terminal li {
   border-top: 1px solid #ffffff15;
   padding: 20px 0;
@@ -331,9 +380,11 @@
   gap: 20px;
   color: #fff;
 }
+
 .process-terminal li:first-child {
   border: 0;
 }
+
 .process-terminal .professional-service-step-number {
   border-radius: 4px;
   background: #222e3c;
@@ -341,18 +392,22 @@
   margin-bottom: 0;
   flex: 0 0 44px;
 }
+
 .process-terminal .professional-service-steps p {
   color: #a7b4c5;
 }
+
 .handover-tiles .professional-service-handover-grid {
   display: block;
 }
+
 .handover-tiles .professional-service-deliverables {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
   margin-top: 32px;
 }
+
 .handover-tiles .professional-service-deliverables li {
   display: block;
   padding: 24px;
@@ -360,64 +415,81 @@
   border-radius: 12px;
   background: #f7f9fb;
 }
+
 .handover-tiles .professional-service-deliverables svg {
   display: block;
   margin-bottom: 20px;
 }
+
 .handover-tiles .professional-service-toolbox {
   margin-top: 36px;
 }
+
 .scenario-console {
   background: #111925;
   color: #fff;
 }
+
 .scenario-console .professional-service-heading p {
   color: #a7b4c5;
 }
+
 .scenario-console .professional-service-delivery-plan {
   background: #192330;
   border-color: #344154;
   box-shadow: none;
 }
+
 .scenario-console .professional-service-delivery-plan li p {
   color: #e4eaf2;
 }
+
 .scenario-console .professional-service-delivery-plan li,
 .scenario-console .professional-service-plan-note {
   border-color: #ffffff16;
 }
+
 .scenario-console .professional-service-plan-note {
   color: #a7b4c5;
 }
+
 .faq-dark {
   background: #0b111b;
   color: #fff;
 }
+
 .faq-dark .professional-service-disclosure {
   background: #16202c;
   border-color: #2a3747;
 }
+
 .faq-dark p {
   color: #a7b4c5;
 }
+
 .service-design-qaTesting .professional-service-hero {
   background-color: #fcfbf9;
 }
+
 .service-design-qaTesting .professional-service-hero-copy {
   width: 48%;
   margin: 0;
 }
+
 .capabilities-coverage {
   background: #fff;
   color: var(--service-ink);
 }
+
 .capabilities-coverage p {
   color: var(--service-muted);
 }
+
 .capabilities-coverage .professional-service-capabilities {
   grid-template-columns: 1fr;
   gap: 0;
 }
+
 .capabilities-coverage .professional-service-capability {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -429,75 +501,93 @@
   padding: 28px 0;
   gap: 28px;
 }
+
 .capabilities-coverage .professional-service-card-top {
   margin: 0;
   flex-direction: row-reverse;
   justify-content: flex-end;
   gap: 28px;
 }
+
 .capabilities-coverage .service-capability-text {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 40px;
   align-items: center;
 }
+
 .capabilities-coverage .service-capability-text p {
   margin: 0;
   max-width: none;
 }
+
 .process-checkpoints {
   background: #f4efe8;
 }
+
 .process-checkpoints .professional-service-steps {
   gap: 16px;
 }
+
 .process-checkpoints li {
   padding: 24px;
   border: 1px solid #e8dbcf;
   border-radius: 12px;
   background: #fffdf9;
 }
+
 .process-checkpoints .professional-service-step-number {
   border-radius: 6px;
 }
+
 .scenario-checklist {
   background: #fff;
 }
+
 .scenario-checklist .professional-service-delivery-plan {
   border-radius: 12px;
   box-shadow: none;
   border: 2px solid #e0d1d1;
   background: #fffdfa;
 }
+
 .scenario-checklist .professional-service-plan-top {
   color: #f45b35;
 }
-.scenario-checklist li > span {
+
+.scenario-checklist li>span {
   border-radius: 50%;
   border-color: #cfa7a7;
   color: #f45b35;
 }
+
 .faq-cards .professional-service-faq-grid {
   display: block;
 }
+
 .faq-cards .professional-service-faq-list {
   margin-top: 36px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
   align-items: start;
 }
+
 .service-design-dedicatedProductTeams .professional-service-hero {
   background-color: #f8ede2;
 }
+
 .capabilities-roster {
   background: #fff;
   color: var(--service-ink);
 }
+
 .capabilities-roster p {
   color: var(--service-muted);
 }
+
 .capabilities-roster .professional-service-capabilities {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+
 .capabilities-roster .professional-service-capability {
   min-height: 330px;
   border: 1px solid #e9dfd3;
@@ -505,10 +595,12 @@
   border-radius: 70px 70px 12px 12px;
   padding: 30px 24px;
 }
+
 .capabilities-roster .professional-service-card-top {
   flex-direction: column-reverse;
   gap: 18px;
 }
+
 .capabilities-roster .professional-service-card-top svg {
   width: 54px;
   height: 54px;
@@ -516,77 +608,97 @@
   background: #f6e8db;
   padding: 12px;
 }
+
 .capabilities-roster h3 {
   font-size: 21px;
   text-align: center;
 }
+
 .capabilities-roster p {
   text-align: center;
 }
+
 .handover-editorial {
   background: #f3ece4;
 }
+
 .handover-editorial .professional-service-handover-grid {
   grid-template-columns: 1.1fr 0.9fr;
 }
+
 .handover-editorial .professional-service-deliverables {
   border-left: 2px solid #dda685;
   padding-left: 30px;
 }
+
 .process-staggered {
   background: #111318;
   color: #fff;
 }
+
 .process-staggered .professional-service-steps {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
 }
+
 .process-staggered li {
   padding: 30px;
   border: 1px solid #ffffff20;
   border-radius: 12px;
   background: #1a1d25;
 }
+
 .process-staggered li:nth-child(even) {
   transform: translateY(28px);
 }
+
 .process-staggered .professional-service-steps {
   padding-bottom: 28px;
 }
+
 .process-staggered p {
   color: #a7abb5;
 }
+
 .scenario-team {
   background: #fff;
 }
+
 .scenario-team .professional-service-delivery-plan {
   background: #f8f4ef;
   border-radius: 12px;
   box-shadow: none;
 }
+
 .cta-framed {
   background: #fcfbf9;
 }
-.cta-framed > .service-container {
+
+.cta-framed>.service-container {
   max-width: 1360px !important;
   border: 1px solid #e1c6b2;
   border-radius: 12px;
   background: #f8ede2;
   padding: 40px;
 }
+
 .cta-framed h2 {
   max-width: 800px;
   margin-inline: auto;
 }
+
 .service-design-productDiscoveryStrategy .professional-service-hero {
   background-color: #f7f1e8;
 }
+
 .process-roadmap {
   background: #fff;
 }
+
 .process-roadmap .professional-service-steps {
   gap: 18px;
 }
+
 .process-roadmap li {
   padding: 26px;
   border: 1px solid #e6dccc;
@@ -594,9 +706,11 @@
   background: #fbf5e7;
   box-shadow: 4px 5px 0 #e9e2d8;
 }
+
 .process-roadmap li:nth-child(even) {
   background: #f5efe9;
 }
+
 .process-roadmap .professional-service-step-number {
   background: transparent;
   font-size: 32px;
@@ -604,59 +718,73 @@
   height: auto;
   border-radius: 0;
 }
+
 .capabilities-bento {
   background: #f1eade;
   color: var(--service-ink);
 }
+
 .capabilities-bento p {
   color: var(--service-muted);
 }
+
 .capabilities-bento .professional-service-capabilities {
   grid-template-columns: repeat(5, 1fr);
   gap: 18px;
 }
+
 .capabilities-bento .professional-service-capability:nth-child(1) {
   grid-column: 1 / 4;
 }
+
 .capabilities-bento .professional-service-capability:nth-child(2) {
   grid-column: 4 / 6;
 }
+
 .capabilities-bento .professional-service-capability:nth-child(3) {
   grid-column: 1 / 3;
 }
+
 .capabilities-bento .professional-service-capability:nth-child(4) {
   grid-column: 3 / 6;
 }
+
 .capabilities-bento .professional-service-capability {
   border: 0;
   border-radius: 12px;
   background: #fffdf9;
 }
+
 .capabilities-bento .professional-service-capability:nth-child(2) {
   background: #f45b35;
   color: #fff;
 }
-.capabilities-bento
-  .professional-service-capability:nth-child(2)
-  :is(p, .professional-service-card-top) {
+
+.capabilities-bento .professional-service-capability:nth-child(2) :is(p, .professional-service-card-top) {
   color: #fff;
 }
+
 .capabilities-bento .professional-service-capability:nth-child(3) {
   background: #252831;
   color: #fff;
 }
+
 .capabilities-bento .professional-service-capability:nth-child(3) p {
   color: #b4b6be;
 }
+
 .scenario-canvas {
   background: #fffdf9;
 }
+
 .scenario-canvas .professional-service-scenario-grid {
   grid-template-columns: 1fr;
 }
+
 .scenario-canvas .professional-service-heading {
   max-width: 900px;
 }
+
 .scenario-canvas .professional-service-delivery-plan {
   background: #f5f0e5;
   border-radius: 12px;
@@ -664,11 +792,13 @@
   max-width: none;
   box-shadow: none;
 }
+
 .scenario-canvas ol {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
+
 .scenario-canvas li {
   flex-direction: column;
   align-items: flex-start;
@@ -677,69 +807,86 @@
   padding: 24px;
   box-shadow: 3px 4px 0 #e0d5c5;
 }
+
 .handover-numbered .professional-service-handover-grid {
   display: block;
 }
+
 .handover-numbered .professional-service-deliverables {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin-top: 36px;
 }
+
 .handover-numbered .service-deliverable-number {
   display: block;
   font-size: 32px;
   color: #d0ab90;
   line-height: 1;
 }
+
 .handover-numbered .professional-service-deliverables svg {
   display: none;
 }
+
 .handover-numbered .professional-service-toolbox {
   margin-top: 36px;
 }
+
 .service-design-maintenanceSupport .professional-service-hero {
   background-color: #101816;
   color: #fff;
 }
+
 .service-design-maintenanceSupport .professional-service-intro,
 .service-design-maintenanceSupport .professional-service-hero-note {
   color: #afbeb8;
 }
+
 .service-design-maintenanceSupport .professional-service-name {
   color: #d6e1dc !important;
 }
+
 .service-design-maintenanceSupport .professional-service-text-link {
   color: #fff;
 }
+
 .scenario-status {
   background: #fff6f3;
 }
+
 .scenario-status .professional-service-scenario-grid {
   grid-template-columns: 1fr 0.9fr;
 }
+
 .scenario-status .professional-service-delivery-plan {
   border-color: #e0d1d1;
   border-top: 4px solid #ff0000;
   box-shadow: none;
 }
+
 .capabilities-support {
   background: #fff;
   color: var(--service-ink);
 }
+
 .capabilities-support p {
   color: var(--service-muted);
 }
-.capabilities-support > .service-container {
+
+.capabilities-support>.service-container {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 70px;
 }
+
 .capabilities-support .professional-service-capabilities {
   margin-top: 0;
   grid-template-columns: 1fr;
   gap: 0;
 }
+
 .capabilities-support .professional-service-capability {
   flex-direction: row;
   gap: 28px;
@@ -750,24 +897,29 @@
   padding: 24px 0;
   min-height: 0;
 }
+
 .capabilities-support .professional-service-card-top {
   flex-direction: column;
   justify-content: flex-start;
   gap: 14px;
   margin: 0;
 }
+
 .service-design-maintenanceSupport .handover-light {
   background: #fff6f3;
 }
+
 .process-cycle {
   background: #101816;
   color: #fff;
 }
-.process-cycle > .service-container {
+
+.process-cycle>.service-container {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 60px;
 }
+
 .process-cycle .professional-service-steps {
   grid-template-columns: 1fr;
   gap: 0;
@@ -775,199 +927,228 @@
   border-left: 1px solid #426355;
   padding-left: 28px;
 }
+
 .process-cycle li {
   display: flex;
   gap: 24px;
   padding: 22px 0;
   border-color: #ffffff15;
 }
+
 .process-cycle li:first-child {
   border: 0;
 }
+
 .process-cycle .professional-service-step-number {
   flex: 0 0 44px;
   background: #24372f;
   color: #b9d9c6;
 }
+
 .process-cycle .professional-service-steps p {
   color: #afbeb8;
 }
+
 .service-design-maintenanceSupport .cta-dark {
   background: #101816;
 }
+
 @media (max-width: 1024px) {
   .service-design-crmErpSolutions .professional-service-hero-copy {
     width: 100%;
     margin: 0;
   }
+
   .service-design-crmErpSolutions .professional-service-hero {
     background-position: calc(50% - 200px) bottom;
   }
+
   .service-design-qaTesting .professional-service-hero {
     background-position: calc(50% - 200px) bottom;
   }
+
   .service-design-qaTesting .professional-service-hero-copy {
     width: 100%;
   }
-  :is(
-      .capabilities-infrastructure,
-      .capabilities-support,
-      .process-terminal,
-      .process-timeline,
-      .process-cycle
-    )
-    > .service-container {
+
+  :is(.capabilities-infrastructure,
+    .capabilities-support,
+    .process-terminal,
+    .process-timeline,
+    .process-cycle)>.service-container {
     grid-template-columns: 1fr;
     gap: 36px;
   }
-  :is(.capabilities-matrix, .capabilities-roster)
-    .professional-service-capabilities {
+
+  :is(.capabilities-matrix, .capabilities-roster) .professional-service-capabilities {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
   }
+
   .capabilities-matrix .professional-service-capability {
     border-left: 0;
     padding: 20px 0;
     border-top: 1px solid #e5ded7;
   }
+
   .handover-tiles .professional-service-deliverables {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .capabilities-coverage .service-capability-text {
     grid-template-columns: 1fr;
     gap: 14px;
   }
-  .cta-split > .service-container {
+
+  .cta-split>.service-container {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
   }
+
   .scenario-status .professional-service-scenario-grid {
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 767px) {
   .service-design-crmErpSolutions .professional-service-hero {
     background-position: calc(50% - 154px) bottom;
   }
+
   .service-design-qaTesting .professional-service-hero {
     background-position: calc(50% - 154px) bottom;
   }
-  :is(
-      .capabilities-showcase,
-      .capabilities-matrix,
-      .capabilities-roster,
-      .capabilities-bento
-    )
-    .professional-service-capabilities {
+
+  :is(.capabilities-showcase,
+    .capabilities-matrix,
+    .capabilities-roster,
+    .capabilities-bento) .professional-service-capabilities {
     grid-template-columns: 1fr;
   }
+
   .capabilities-bento .professional-service-capability:nth-child(1),
   .capabilities-bento .professional-service-capability:nth-child(2),
   .capabilities-bento .professional-service-capability:nth-child(3),
   .capabilities-bento .professional-service-capability:nth-child(4) {
     grid-column: auto;
   }
+
   .capabilities-showcase .professional-service-capability:first-child {
     grid-row: auto;
     min-height: 290px;
   }
+
   .capabilities-showcase .professional-service-capability:first-child h3 {
     font-size: 30px;
   }
-  :is(
-      .capabilities-showcase,
-      .capabilities-infrastructure,
-      .capabilities-support
-    )
-    .professional-service-capability:not(:first-child) {
+
+  :is(.capabilities-showcase,
+    .capabilities-infrastructure,
+    .capabilities-support) .professional-service-capability:not(:first-child) {
     gap: 20px;
   }
+
   .capabilities-roster .professional-service-capability {
     min-height: 0;
     border-radius: 16px;
   }
+
   .capabilities-roster .professional-service-card-top {
     flex-direction: row;
   }
+
   .capabilities-roster :is(h3, p) {
     text-align: left;
   }
+
   .capabilities-coverage .professional-service-capability {
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
   .capabilities-coverage .professional-service-card-top {
     justify-content: flex-end;
     flex-direction: row;
   }
+
   .process-rail .professional-service-steps {
     gap: 0;
   }
+
   .process-rail .professional-service-steps li {
     border-left: 0;
     padding: 24px 0;
   }
-  :is(.process-staggered, .process-roadmap, .process-checkpoints)
-    .professional-service-steps {
+
+  :is(.process-staggered, .process-roadmap, .process-checkpoints) .professional-service-steps {
     grid-template-columns: 1fr;
   }
+
   .process-staggered li:nth-child(even) {
     transform: none;
   }
+
   .process-staggered .professional-service-steps {
     padding: 0;
   }
+
   .process-terminal .professional-service-steps {
     padding: 20px;
   }
+
   .process-cycle .professional-service-steps {
     padding-left: 18px;
   }
-  .process-timeline
-    li:not(:last-child)
-    .professional-service-step-number::after {
+
+  .process-timeline li:not(:last-child) .professional-service-step-number::after {
     height: 120px;
   }
+
   :is(.scenario-connected, .scenario-canvas) ol {
     grid-template-columns: 1fr;
   }
+
   .scenario-canvas .professional-service-scenario-grid {
     gap: 28px;
   }
+
   .scenario-canvas .professional-service-delivery-plan {
     padding: 20px;
   }
+
   .handover-editorial .professional-service-handover-grid {
     grid-template-columns: 1fr;
   }
+
   .handover-editorial .professional-service-deliverables {
     padding-left: 20px;
   }
+
   :is(.handover-tiles, .handover-numbered) .professional-service-deliverables {
     grid-template-columns: 1fr;
   }
+
   .faq-cards .professional-service-faq-list {
     grid-template-columns: 1fr;
   }
-  .cta-framed > .service-container {
+
+  .cta-framed>.service-container {
     padding: 28px 20px;
     border-radius: 14px;
   }
 }
+
 @media (max-width: 767px) {
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child {
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child {
     min-height: 440px;
     background-size:
       cover,
       100% auto;
   }
 }
-.service-design-customSoftwareDevelopment
-  .capabilities-showcase
-  .professional-service-capability:first-child {
+
+.service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -978,9 +1159,8 @@
     inset 0 1px 0 rgb(255 255 255 / 16%),
     inset 0 0 30px rgb(255 255 255 / 3%);
 }
-.service-design-customSoftwareDevelopment
-  .capabilities-showcase
-  .professional-service-capability:first-child::before {
+
+.service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -989,20 +1169,18 @@
   border-radius: inherit;
   background:
     radial-gradient(ellipse at 100% 0%, rgb(245 87 51 / 13%), transparent 52%),
-    linear-gradient(
-      125deg,
+    linear-gradient(125deg,
       rgb(255 255 255 / 9%),
       rgb(255 255 255 / 2%) 38%,
-      transparent 60%
-    );
+      transparent 60%);
 }
+
 @media (max-width: 1024px) {
   .capabilities-showcase .professional-service-capabilities {
     grid-template-columns: minmax(0, 1fr);
   }
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child {
+
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child {
     grid-row: auto;
     flex-direction: row;
     justify-content: flex-start;
@@ -1013,47 +1191,37 @@
     background: #14171e;
     box-shadow: none;
   }
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child::before {
+
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child::before {
     content: none;
   }
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child
-    .professional-service-card-top {
+
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child .professional-service-card-top {
     flex-direction: column-reverse;
     justify-content: flex-end;
     gap: 14px;
     margin: 0;
     text-shadow: none;
   }
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child
-    h3 {
+
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child h3 {
     max-width: none;
     font-size: 24px;
   }
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child
-    p {
+
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child p {
     color: #a4a8b2;
   }
 }
+
 @media (max-width: 767px) {
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child {
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child {
     gap: 20px;
   }
 }
+
 @media (max-width: 767px) {
-  .service-design-customSoftwareDevelopment
-    .capabilities-showcase
-    .professional-service-capability:first-child
-    h3 {
+  .service-design-customSoftwareDevelopment .capabilities-showcase .professional-service-capability:first-child h3 {
     font-size: 22px;
   }
 }

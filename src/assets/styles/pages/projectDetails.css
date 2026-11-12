@@ -20,6 +20,29 @@
   border-bottom: 1px solid #e9e5df;
 }
 
+/* Hero banner that already contains the device artwork (e.g. LiftPitch) */
+.project-detail-hero--art-bg {
+  background-position: right center;
+}
+
+.project-detail-hero--art-bg .project-detail-artwork {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .project-detail-hero.project-detail-hero--art-bg {
+    background-image: none;
+  }
+
+  .project-detail-hero--art-bg .project-detail-artwork {
+    display: flex;
+  }
+
+  .project-detail-hero--art-bg .project-detail-artwork img {
+    border-radius: 12px;
+  }
+}
+
 .project-detail-back {
   background-color: transparent;
   border: 1px solid #c83d1d;

@@ -2,6 +2,11 @@ import { paths } from "../../routes/paths";
 import { ArrowUpRight } from "lucide-react";
 import { IMAGES } from "../../utils/Constant";
 import { SiteLink } from "../sharedUi/Interactive";
+import ReviewCard from "../sharedUi/ReviewCard";
+import {
+  clientReviews,
+  homepageClientReviewIds,
+} from "../../utils/clientReviews";
 const HomeClientTrust = () => {
   return (
     <div
@@ -160,50 +165,13 @@ const HomeClientTrust = () => {
             </div>
           </div>
           <div className="client-trust-reviews-grid">
-            {/* Left col — black top, white bottom */}
-            <div className="client-trust-reviews-col">
-              <blockquote className="ct-review-card ct-review-card--dark">
-                <p className="ct-review-label">Client review</p>
-                <p className="ct-review-quote">
-                  "Working with Mohsin and the UnicodeTech team has been a
-                  positive experience. They bring technical expertise,
-                  commitment, and a collaborative approach to solving complex
-                  challenges."
-                </p>
-                <footer className="ct-review-footer">— DailyDigest</footer>
-              </blockquote>
-              <blockquote className="ct-review-card ct-review-card--light">
-                <p className="ct-review-label">Client review</p>
-                <p className="ct-review-quote">
-                  "We worked with UnicodeTech on our CareCompass project, and
-                  the experience was excellent from start to finish. Their team
-                  was professional, responsive, and truly understood our needs.
-                  The final product exceeded our expectations in both quality
-                  and functionality."
-                </p>
-                <footer className="ct-review-footer">— CareCompass</footer>
-              </blockquote>
-            </div>
-            {/* Right col — white top, black bottom */}
-            <div className="client-trust-reviews-col">
-              <blockquote className="ct-review-card ct-review-card--light">
-                <p className="ct-review-label">Client review</p>
-                <p className="ct-review-quote">
-                  "Absolutely, it’s a fantastic company. They are highly
-                  professional and always follow proper procedures. What I
-                  appreciate the most is their Agile Methodology. Highly
-                  recommended!"
-                </p>
-                <footer className="ct-review-footer">— SaltSpace</footer>
-              </blockquote>
-              <blockquote className="ct-review-card ct-review-card--dark">
-                <p className="ct-review-label">Client review</p>
-                <p className="ct-review-quote">
-                  "Great service, clear communication, and reliable deadlines."
-                </p>
-                <footer className="ct-review-footer">— Listah</footer>
-              </blockquote>
-            </div>
+            {homepageClientReviewIds.map((reviewId) => (
+              <ReviewCard
+                key={reviewId}
+                review={clientReviews[reviewId]}
+                variant="home"
+              />
+            ))}
           </div>
           <div className="layout-item home-client-trust__spacer-4 content-block block-spacer">
             <div className="content-inner">

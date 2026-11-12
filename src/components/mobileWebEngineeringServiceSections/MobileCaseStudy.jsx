@@ -1,4 +1,6 @@
 import { IMAGES } from "../../utils/Constant";
+import ReviewCard from "../sharedUi/ReviewCard";
+import { clientReviews } from "../../utils/clientReviews";
 const MobileCaseStudy = () => {
   return (
     <div
@@ -59,20 +61,10 @@ const MobileCaseStudy = () => {
                 </div>
               </div>
               <div className="layout-item mobile-case-study__layout-5 layout-full layout-flex layout is-loaded">
-                <div className="layout-item mobile-case-study__i-don-t-believe-we-would-be-this-fa content-block block-heading">
-                  <div className="content-inner">
-                    <p className="heading">
-                      "I really appreciate Mohsin (Mo) for all he’s done and I
-                      don’t believe we would be this far along if it wasn’t for
-                      his expertise."
-                    </p>
-                  </div>
-                </div>
-                <div className="layout-item mobile-case-study__zach-l-ceo-spin-the-night content-block block-heading">
-                  <div className="content-inner">
-                    <p className="heading">— Spin The Night</p>
-                  </div>
-                </div>
+                <ReviewCard
+                  review={clientReviews.flaviusdarity}
+                  variant="embedded"
+                />
               </div>
             </div>
             {}

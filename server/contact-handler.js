@@ -47,7 +47,7 @@ export function createContactHandler({
         status: 405,
         headers: { Allow: "GET, POST" },
       });
-    const origin = env.SITE_URL || "https://unicodetech-react.vercel.app";
+    const origin = env.SITE_URL || "https://unicodetech-dev.vercel.app";
     if (
       (request.headers.get("origin") &&
         request.headers.get("origin") !== origin) ||

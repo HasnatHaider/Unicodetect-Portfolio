@@ -19,4 +19,4 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-Sitemap: https://unicodetech-react.vercel.app/sitemap.xml
+Sitemap: https://unicodetech-dev.vercel.app/sitemap.xml

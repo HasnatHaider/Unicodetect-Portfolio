@@ -1,0 +1,134 @@
+.review-card {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: 26px;
+  border: 1px solid #f0d1c6;
+  border-radius: 18px;
+  background: #fff;
+  color: #25262a;
+}
+
+/* Doubled class keeps these values when a page styles every <p> */
+.review-card .review-card__attribution {
+  margin: 0;
+  color: #6f7075;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  line-height: 1.5;
+}
+
+.review-card__rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-card__stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #e95330;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.review-card__rating-value {
+  color: #4b4d52;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.review-card__quote {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.review-card .review-card__quote p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.review-card__footer {
+  display: grid;
+  gap: 12px;
+  padding-top: 15px;
+  border-top: 1px solid #eee4df;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.review-card__reviewer,
+.review-card__project {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px 10px;
+}
+
+.review-card__reviewer strong {
+  color: #28292d;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.review-card__reviewer span,
+.review-card__project span {
+  color: #666970;
+}
+
+.review-card__project span+span::before {
+  content: "·";
+  margin-right: 10px;
+  color: #a3a3a6;
+}
+
+.review-card__verified {
+  color: #b9472c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.review-card--case-study {
+  max-width: 820px;
+  margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+  .review-card {
+    gap: 13px;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .review-card__quote {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+.review-card--embedded {
+  width: 100%;
+}
+
+/* Mobile engineering page: the card replaces the old bordered quote block */
+.mobile-page .layout-item.mobile-case-study__layout-5:has(> .review-card) {
+  --border-left-width: 0px;
+  --padding-left: 0px;
+  border-left: 0;
+  padding-left: 0;
+}

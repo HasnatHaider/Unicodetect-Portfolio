@@ -2,6 +2,7 @@ export const caseStudyProjects = [
   {
     title: "Spin The Night",
     slug: "spin-the-night",
+    logoId: "spinTheNight",
     category: "Dining & events",
     description:
       "Spin The Night helps users discover dining and events in urban areas, offering personalized recommendations for every taste.",
@@ -24,6 +25,8 @@ export const caseStudyProjects = [
   {
     title: "CareCompass",
     slug: "carecompass",
+    logoId: "carecompass",
+    clientLogoId: "bms",
     category: "Services marketplace",
     description:
       "CareCompass connects self-care providers with clients, offering targeted marketing to boost visibility and help businesses thrive.",
@@ -48,6 +51,8 @@ export const caseStudyProjects = [
   {
     title: "DailyDigest",
     slug: "daily-digest",
+    logoId: "dailydigest",
+    clientLogoId: "bms",
     category: "Health & well-being",
     description:
       "DailyDigest is designed to help individuals understand how their diet impacts digestion, bloating, and daily energy levels.",
@@ -64,6 +69,8 @@ export const caseStudyProjects = [
   {
     title: "ContractorConnect",
     slug: "contractor-connect",
+    logoId: "contractorconnect",
+    clientLogoId: "bms",
     category: "Services marketplace",
     description:
       "ContractorConnect connects users and contractors across a wide range of services. Post a job, find a provider, and agree on price and scope before work begins.",
@@ -77,6 +84,8 @@ export const caseStudyProjects = [
   {
     title: "TaskHive Pro",
     slug: "task-hive",
+    logoId: "taskhive",
+    clientLogoId: "bms",
     category: "Cleaning services",
     description:
       "TaskHive Pro is a marketplace for cleaning services. Post a job, find a cleaner, and chat to agree on price and requirements before arranging the work.",
@@ -91,6 +100,7 @@ export const caseStudyProjects = [
   {
     title: "Iconic Beauti",
     slug: "iconic-beauti",
+    logoId: "iconicBeauti",
     category: "Beauty e-commerce",
     description:
       "We built a custom Shopify storefront for Iconic Beauti, translating a premium beauty brand identity into every product page, collection, and checkout step.",
@@ -100,5 +110,21 @@ export const caseStudyProjects = [
     heroMockupKey: "caseStudyIconicBeautiHeroMockup",
     heroBgKey: "caseStudyIconicBeautiHeroBg",
     href: "/case-studies/iconic-beauti",
+  },
+  {
+    title: "LiftPitch",
+    slug: "liftpitch",
+    logoId: "liftpitch",
+    category: "Social & business networking",
+    description:
+      "LiftPitch brings personal and professional networking together with profiles, content sharing, and tools to manage connections.",
+    stack: ["iOS", "Android"],
+    imageKey: "caseStudyLiftPitch",
+    imageSmallKey: "caseStudyLiftPitch480",
+    heroBgKey: "caseStudyLiftPitchHeroBg",
+    // The hero banner already contains the device artwork, so the hero shows
+    // no separate mockup on desktop and falls back to the cover on small screens.
+    heroArtInBackground: true,
+    href: "/case-studies/liftpitch",
   },
 ];

@@ -830,6 +830,9 @@ button.navigation-submenu-trigger {
 }
 
 .breadcrumb__link {
+  /* Mobile gives links a 44px tap height; centre the label inside it */
+  display: inline-flex;
+  align-items: center;
   color: inherit !important;
   opacity: 0.6;
   text-decoration: none;
@@ -915,7 +918,6 @@ button.navigation-submenu-trigger {
     flex-direction: column;
     align-items: flex-start;
     padding: 16px;
-    /* Sit above the sticky mobile CTA */
-    bottom: 68px;
+    bottom: 0;
   }
 }

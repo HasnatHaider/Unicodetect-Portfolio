@@ -4,7 +4,6 @@ import { SiteLink } from "../sharedUi/Interactive";
 import { UiUxEyebrow } from "./UiUxSectionHeading";
 import PageBreadcrumb from "../sharedUi/PageBreadcrumb";
 
-
 const UiUxHero = () => (
   <section
     className="uiux-hero service-hero-theme"
@@ -25,7 +24,7 @@ const UiUxHero = () => (
           researched user pathways that transform complex technical capabilities
           into intuitive software products.
         </p>
-        <div className="uiux-actions">
+        <div className="uiux-actions ui-ux-hero-action">
           <SiteLink
             schedule
             className="uiux-button uiux-button-primary service-hero-button service-hero-button--primary"

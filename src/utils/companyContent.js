@@ -27,7 +27,7 @@ export const companyContent = {
     { value: "100+", label: "Products Delivered" },
     { value: "30+", label: "In-House Engineers" },
     { value: "15+", label: "Countries Served" },
-    { value: "End-to-End", label: "Product Development" },
+    { value: "7", label: "Apps for one client" },
   ],
   deliveryProcess: [
     {
