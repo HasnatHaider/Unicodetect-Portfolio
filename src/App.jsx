@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
-import Home from "./pages/Home";
+const Home = lazy(() => import("./pages/Home"));
 const AiAgentsAutomation = lazy(() => import("./pages/AiAgentsAutomation"));
 const AiVideoCreation = lazy(() => import("./pages/AiVideoCreation"));
 const SaasDevelopment = lazy(() => import("./pages/SaasDevelopment"));
@@ -37,6 +37,10 @@ const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const Accessibility = lazy(() => import("./pages/Accessibility"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const ReDesignLanding = lazy(() => import("./pages/RedesignLandingPage"));
+const AdminAuthLayout = lazy(() => import("./pages/admin/AdminAuthLayout"));
+const ProtectedRoute = lazy(() => import("./components/sharedUi/ProtectedRoute"));
+const PublicOnlyRoute = lazy(() => import("./components/sharedUi/PublicOnlyRoute"));
 const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
 const AdminLayout = lazy(() => import("./pages/admin/AdminLayout"));
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
@@ -45,8 +49,7 @@ const AdminBlogEditor = lazy(() => import("./pages/admin/AdminBlogEditor"));
 const AdminCategories = lazy(() => import("./pages/admin/AdminCategories"));
 import NotFound from "./pages/NotFound";
 import { paths } from "./routes/paths";
-import ProtectedRoute from "./components/sharedUi/ProtectedRoute";
-import PublicOnlyRoute from "./components/sharedUi/PublicOnlyRoute";
+import { caseStudyRoutes } from "./caseStudies/routes";
 
 const App = () => {
   return (
@@ -64,6 +67,8 @@ const App = () => {
       }
     >
       <Routes>
+        {/* Own header and footer, so it sits outside AppLayout. */}
+        <Route path={paths.ReDesignLanding} element={<ReDesignLanding />} />
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path={paths.home} element={<Home />} />
@@ -71,26 +76,15 @@ const App = () => {
           <Route path={paths.contact} element={<Contact />} />
           <Route path={paths.caseStudies} element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<ProjectDetails />} />
-          <Route
-            path="/spin-the-night"
-            element={<ProjectDetails slug="spin-the-night" />}
-          />
-          <Route
-            path="/carecompass"
-            element={<ProjectDetails slug="carecompass" />}
-          />
-          <Route
-            path="/daily-digest"
-            element={<ProjectDetails slug="daily-digest" />}
-          />
-          <Route
-            path="/contractor-connect"
-            element={<ProjectDetails slug="contractor-connect" />}
-          />
-          <Route
-            path="/task-hive"
-            element={<ProjectDetails slug="task-hive" />}
-          />
+          {caseStudyRoutes().flatMap(({ slug, aliases }) =>
+            aliases.map((alias) => (
+              <Route
+                key={alias}
+                path={alias}
+                element={<ProjectDetails slug={slug} />}
+              />
+            )),
+          )}
 
           <Route path={paths.bmsEcosystem} element={<BmsEcosystem />} />
           <Route path={paths.services} element={<ServicesPage />} />
@@ -139,27 +133,29 @@ const App = () => {
           <Route path={paths.blogPost} element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route
-          path={paths.adminLogin}
-          element={
-            <PublicOnlyRoute>
-              <AdminLogin />
-            </PublicOnlyRoute>
-          }
-        />
-        <Route
-          path={paths.admin}
-          element={
-            <ProtectedRoute>
-              <AdminLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<AdminDashboard />} />
-          <Route path="blogs" element={<AdminBlogs />} />
-          <Route path="blogs/new" element={<AdminBlogEditor />} />
-          <Route path="blogs/edit/:id" element={<AdminBlogEditor />} />
-          <Route path="categories" element={<AdminCategories />} />
+        <Route element={<AdminAuthLayout />}>
+          <Route
+            path={paths.adminLogin}
+            element={
+              <PublicOnlyRoute>
+                <AdminLogin />
+              </PublicOnlyRoute>
+            }
+          />
+          <Route
+            path={paths.admin}
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<AdminDashboard />} />
+            <Route path="blogs" element={<AdminBlogs />} />
+            <Route path="blogs/new" element={<AdminBlogEditor />} />
+            <Route path="blogs/edit/:id" element={<AdminBlogEditor />} />
+            <Route path="categories" element={<AdminCategories />} />
+          </Route>
         </Route>
       </Routes>
     </Suspense>

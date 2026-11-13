@@ -1,4 +1,3 @@
-import sanitizeHtml from 'sanitize-html';
 import { Parser } from 'htmlparser2';
 import { getSocialSource, safeImageUrl } from './socialSource.js';
 export { getSocialSource } from './socialSource.js';
@@ -56,30 +55,5 @@ export function getPostPresentation(blog = {}) {
 
 export function formatBlogDate(value, long = false) {
   const date = value?.toDate ? value.toDate() : value?.seconds ? new Date(value.seconds * 1000) : value ? new Date(value) : null;
-  return date && !Number.isNaN(date.getTime()) ? date.toLocaleDateString('en-US', { month: long ? 'long' : 'short', day: 'numeric', year: 'numeric' }) : '';
-}
-
-export function sanitizeBlogHtml(content = '') {
-  return sanitizeHtml(content, {
-    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img', 'iframe', 's', 'u'],
-    allowedAttributes: {
-      a: ['href','title','target','rel'], img: ['src','alt','title','width','height','loading'],
-      iframe: ['src','title','allow','allowfullscreen','loading'],
-      '*': ['style'], td: ['colspan','rowspan'], th: ['colspan','rowspan'],
-    },
-    allowedSchemes: ['https','mailto','tel'], allowProtocolRelative: false,
-    allowedStyles: { '*': { 'text-align': [/^(left|right|center|justify)$/], color: [/^#[0-9a-fA-F]{3,8}$/,/^rgb\([\d\s,]+\)$/] } },
-    transformTags: {
-      a: (_tag, attrs) => ({ tagName: 'a', attribs: { ...attrs, rel: 'noopener noreferrer', ...(attrs.target ? {target:'_blank'} : {}) } }),
-      img: (_tag, attrs) => ({ tagName:'img', attribs:{...attrs, src:safeImageUrl(attrs.src), loading:'lazy'} }),
-      iframe: (_tag, attrs) => {
-        const source = getSocialSource(attrs.src);
-        return { tagName:'iframe', attribs: source?.videoId ? {
-          src:`https://www.youtube-nocookie.com/embed/${source.videoId}`, title:'YouTube video',
-          allow:'encrypted-media; picture-in-picture; fullscreen', allowfullscreen:'', loading:'lazy',
-        } : {} };
-      },
-    },
-    exclusiveFilter: (frame) => ['iframe','img'].includes(frame.tag) && !frame.attribs.src,
-  });
+  return date && !Number.isNaN(date.getTime()) ? date.toLocaleDateString('en-US', { month: long ? 'long' : 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '';
 }

@@ -141,10 +141,10 @@ a {
   object-fit: contain;
   object-position: center;
 }
-.home-achieve.one .swiper-slide {
+.home-achieve.one .marquee__slide {
   text-align: left;
 }
-.home-achieve.two .swiper-slide {
+.home-achieve.two .marquee__slide {
   text-align: right;
 }
 .saas-dev-service-faq-list .accordion-item {

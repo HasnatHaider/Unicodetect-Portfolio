@@ -1,14 +1,13 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb";
 import { breadcrumbMap } from "../../utils/breadcrumbRoutes";
-import { caseStudyProjects } from "../../utils/caseStudies";
+import { findCaseStudyRoute } from "../../caseStudies/routes";
 import { paths } from "../../routes/paths";
 
 const BASE_URL = "https://unicodetech.com";
 
 export default function PageBreadcrumb({ extraBottomMargin = false }) {
   const { pathname, state } = useLocation();
-  const params = useParams();
 
   let items =
     pathname === paths.contact && state?.breadcrumbParent
@@ -21,10 +20,7 @@ export default function PageBreadcrumb({ extraBottomMargin = false }) {
       : breadcrumbMap[pathname];
 
   if (!items) {
-    const slug = params.slug || pathname.replace("/case-studies/", "");
-    const project = caseStudyProjects.find(
-      (p) => p.slug === slug || `/${p.slug}` === pathname,
-    );
+    const project = findCaseStudyRoute(pathname);
     if (project) {
       items = [
         { label: "Home", href: "/" },

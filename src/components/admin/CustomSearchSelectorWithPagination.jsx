@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { ChevronDown, Check, Search } from "lucide-react";
 import { createRequestGuard } from "../../utils/adminState";
-import "../../assets/styles/pages/admin.css";
+import "../../assets/styles/components/customSelect.css";
 
 const CustomSearchSelectorWithPagination = ({
   value,

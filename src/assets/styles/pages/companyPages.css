@@ -171,7 +171,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
-  width: 100%;
 }
 .contact-hero-artwork {
   display: flex;

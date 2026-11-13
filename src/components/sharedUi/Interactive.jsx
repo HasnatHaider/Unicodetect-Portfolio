@@ -12,8 +12,6 @@ import {
 } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { scrollToSection } from "../../utils/scrollToSection";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Autoplay, EffectFade } from "swiper/modules";
 import { HeroProvider } from "../../contexts/HeroContext";
 import { useHero } from "../../contexts/hero-context";
 import {
@@ -122,81 +120,6 @@ export const HeroDots = () => {
           onClick={() => hero.setIndex(index)}
         />
       ))}
-    </div>
-  );
-};
-export const ImageCarousel = ({
-  children,
-  desktop = 1,
-  tablet = desktop,
-  mobile = tablet,
-  gap = 0,
-  tabletGap = gap,
-  mobileGap = tabletGap,
-  speed = 500,
-  fade = false,
-  autoplay = false,
-  delay = 1,
-  reverseDirection = false,
-  loop = false,
-  ...props
-}) => {
-  const hero = useHero();
-  const swiperRef = useRef(null);
-  const heroIndex = hero?.index;
-  useEffect(() => {
-    if (
-      heroIndex !== undefined &&
-      swiperRef.current &&
-      swiperRef.current.realIndex !== heroIndex
-    )
-      swiperRef.current.slideToLoop(heroIndex);
-  }, [heroIndex]);
-  const slides = Children.toArray(children);
-  const reducedMotion =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  return (
-    <div {...props}>
-      <div className="content-inner">
-        <Swiper
-          className="image-carousel"
-          wrapperClass="image-carousel-track"
-          modules={[A11y, Autoplay, EffectFade]}
-          effect={fade ? "fade" : "slide"}
-          fadeEffect={{ crossFade: true }}
-          loop={loop && slides.length > desktop}
-          speed={speed}
-          slidesPerView={mobile}
-          spaceBetween={mobileGap}
-          breakpoints={{
-            768: { slidesPerView: tablet, spaceBetween: tabletGap },
-            1025: { slidesPerView: desktop, spaceBetween: gap },
-          }}
-          autoplay={
-            !hero && !reducedMotion && autoplay
-              ? {
-                  delay,
-                  reverseDirection,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                }
-              : false
-          }
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => {
-            if (hero && hero.index !== swiper.realIndex)
-              hero.setIndex(swiper.realIndex);
-          }}
-          a11y={{ containerMessage: "Image carousel" }}
-        >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index}>{slide}</SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { IMAGES } from "../../utils/Constant";
-import { ImageCarousel } from "../sharedUi/Interactive";
+import { ImageCarousel } from "../sharedUi/ImageCarousel";
 import { clientLogos } from "../../utils/clientLogos";
 
 const officialLogo = (id) => ({
@@ -176,10 +176,6 @@ const HomeExperience = () => {
             tabletGap={20}
             mobileGap={20}
             speed={4000}
-            fade={false}
-            autoplay
-            delay={1}
-            loop
           >
             {trustedLogos.map((logo) => (
               <div className="swiper-slide-content" key={logo.alt}>

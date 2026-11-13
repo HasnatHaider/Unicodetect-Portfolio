@@ -1,7 +1,14 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { paths } from "../../routes/paths";
-import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Pause,
+  Play,
+} from "lucide-react";
 import { SiteLink } from "../sharedUi/Interactive";
+import ResponsiveImage from "../sharedUi/ResponsiveImage";
 import { IMAGES } from "../../utils/Constant";
 import { companyContent } from "../../utils/companyContent";
 
@@ -57,8 +64,14 @@ const HomeHero = () => {
   return (
     <section
       className="hvs"
-      onMouseEnter={() => { hoverPausedRef.current = true; setPaused(true); }}
-      onMouseLeave={() => { hoverPausedRef.current = false; if (!userPaused) setPaused(false); }}
+      onMouseEnter={() => {
+        hoverPausedRef.current = true;
+        setPaused(true);
+      }}
+      onMouseLeave={() => {
+        hoverPausedRef.current = false;
+        if (!userPaused) setPaused(false);
+      }}
     >
       {}
       <div className="hvs__scene">
@@ -69,7 +82,13 @@ const HomeHero = () => {
               key={i}
               className={`hvs__bg-slide${i === active ? " is-active" : ""}`}
             >
-              <img src={slide.bg} alt="" loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : undefined} />
+              <ResponsiveImage
+                src={slide.bg}
+                sizes="100vw"
+                alt=""
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : undefined}
+              />
             </div>
           ))}
           <div className="hvs__overlay" />
@@ -78,7 +97,9 @@ const HomeHero = () => {
         <div className="hvs__inner-container">
           <div className="hvs__inner">
             <div className="hvs__left">
-              <h1 className="screen-reader-text">AI-First Product Engineering Company</h1>
+              <h1 className="screen-reader-text">
+                AI-First Product Engineering Company
+              </h1>
               <p className="hvs__eyebrow">
                 <span className="hvs__live-dot" aria-hidden="true" />
                 {s.eyebrow}

@@ -2,7 +2,8 @@ import { paths } from "../../routes/paths";
 import { useLocation } from "react-router-dom";
 import { pendingServices } from "../../utils/pendingServices";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
-import { IMAGES } from "../../utils/Constant";
+import logoSmall from "../../assets/images/Frame-16-1-300x30.png";
+import logo from "../../assets/images/Frame-16-1.png";
 import {
   SiteLink,
   NavigationMenu,
@@ -78,9 +79,9 @@ const Header = () => {
                       <img
                         width="300"
                         height="30"
-                        src={IMAGES.Frame_16_1_300x30}
+                        src={logoSmall}
                         alt="UnicodeTech"
-                        srcSet={`${IMAGES.Frame_16_1_300x30} 300w, ${IMAGES.Frame_16_1} 552w`}
+                        srcSet={`${logoSmall} 300w, ${logo} 552w`}
                         sizes="(max-width: 300px) 100vw, 300px"
                       />
                     </SiteLink>

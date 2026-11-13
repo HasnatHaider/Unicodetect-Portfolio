@@ -31,6 +31,25 @@
       "source": "/task-hive",
       "destination": "/case-studies/task-hive",
       "statusCode": 301
+    },
+    {
+      "source": "/bellreserve",
+      "destination": "/case-studies/bellreserve",
+      "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog-post"
+    },
+    {
+      "source": "/admin",
+      "destination": "/app-shell"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/app-shell"
     }
   ],
   "headers": [

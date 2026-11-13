@@ -1,17 +1,13 @@
 import { paths } from "../routes/paths";
+import { caseStudyRoutes } from "../caseStudies/routes";
 
 export const BASE_URL = "https://unicodetech-dev.vercel.app";
 export const aliases = {
   "/portfolio-case-studies": "/case-studies",
   ...Object.fromEntries(
-    [
-      "spin-the-night",
-      "carecompass",
-      "daily-digest",
-      "contractor-connect",
-      "task-hive",
-      "bellreserve",
-    ].map((slug) => [`/${slug}`, `/case-studies/${slug}`]),
+    caseStudyRoutes().flatMap(({ path, aliases }) =>
+      aliases.map((alias) => [alias, path]),
+    ),
   ),
 };
 const serviceKeys = [

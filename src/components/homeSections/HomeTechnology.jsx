@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { IMAGES } from "../../utils/Constant";
-import { ImageCarousel, SiteLink } from "../sharedUi/Interactive";
+import { SiteLink } from "../sharedUi/Interactive";
+import { ImageCarousel } from "../sharedUi/ImageCarousel";
 const HomeTechnology = () => {
   return (
     <div
@@ -111,11 +112,7 @@ const HomeTechnology = () => {
             tabletGap={20}
             mobileGap={15}
             speed={4000}
-            fade={false}
-            autoplay
             reverseDirection
-            delay={1}
-            loop
           >
             <div className="swiper-slide-content">
               <figure>
@@ -218,10 +215,6 @@ const HomeTechnology = () => {
             tabletGap={20}
             mobileGap={15}
             speed={4000}
-            fade={false}
-            autoplay
-            delay={1}
-            loop
           >
             <div className="swiper-slide-content">
               <figure>

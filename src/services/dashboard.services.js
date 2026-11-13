@@ -1,13 +1,13 @@
 import {
   collection,
   getDocs,
-  getCountFromServer,
+  getCount as getCountFromServer,
   query,
   where,
   orderBy,
   limit,
   Timestamp,
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 import { db } from "../utils/FirebaseConfig";
 
 const BLOGS = "blogs";

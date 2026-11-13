@@ -21768,3 +21768,12 @@ body:not(.rtl) .home-page .layout-item.home-start-a-project__image {
 .home-page .home-success-stories__layout-52 .success_story-iconic-case-study-btn {
   margin-top: auto;
 }
+/* Sections below the first screen skip style, layout and paint until they
+   approach the viewport. The page has ~3,000 elements; without this the
+   browser styles all of them before the hero can paint. `auto` makes the
+   browser remember each section's real height once it has rendered, so the
+   scrollbar settles after the first pass. */
+.home-page > .layout-item:nth-child(n + 3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 2000px;
+}

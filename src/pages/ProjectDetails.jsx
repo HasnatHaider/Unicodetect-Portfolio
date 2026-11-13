@@ -3,91 +3,95 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Workflow, Phone } from "lucide-react";
 import usePageMetadata from "../hooks/usePageMetadata";
-import { caseStudyProjects } from "../utils/caseStudies";
+import { getCaseStudy } from "../caseStudies";
 import PageBreadcrumb from "../components/sharedUi/PageBreadcrumb";
-import { projectDetails } from "../utils/projectDetails";
 import { clientReviews } from "../utils/clientReviews";
 import ReviewCard from "../components/sharedUi/ReviewCard";
 import ClientLogo from "../components/sharedUi/ClientLogo";
-import { clientLogos } from "../utils/clientLogos";
-import { IMAGES } from "../utils/Constant";
 import { paths } from "../routes/paths";
 import { SiteLink } from "../components/sharedUi/Interactive";
 import NotFound from "./NotFound";
 import "../assets/styles/pages/projectDetails.css";
 
-function ProjectArtwork({ project }) {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const startVideo = () => {
-    setVideoLoaded(true);
-  };
+function ProjectVideo({ project }) {
+  const { video, liveCall, title } = project;
+  const [playing, setPlaying] = useState(false);
+  const startVideo = () => setPlaying(true);
 
-  if (project.heroVideoSrc) {
-    return (
-      <div className="project-detail-video-shell">
-        <div
-          className="project-detail-video"
-        >
-          <img
-            src={project.heroVideoThumbnail}
-            alt="BellReserve product video thumbnail"
-          />
-          {!videoLoaded ? (
-            <button
-              className="project-detail-video__load"
-              type="button"
-              onClick={startVideo}
-              aria-label={`Play ${project.title} product video`}
-            >
-              <span className="project-detail-video__play" aria-hidden="true">
-                ▶
-              </span>
-            </button>
-          ) : (
-            <video
-              src={project.heroVideoSrc}
-              title={`${project.title} product video`}
-              poster={project.heroVideoThumbnail}
-              controls
-              autoPlay
-              playsInline
-              preload="none"
-              onPause={() => setVideoLoaded(false)}
-              onEnded={() => setVideoLoaded(false)}
-            />
-          )}
-        </div>
-        <div className="project-detail-video-caption">
-          <a
-            href="#bellreserve-live-call"
-            className="project-detail-video-caption__watch"
+  return (
+    <div className="project-detail-video-shell">
+      <div className="project-detail-video">
+        <img
+          src={video.poster}
+          alt={`${title} product video`}
+          width="1280"
+          height="720"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {!playing ? (
+          <button
+            className="project-detail-video__load"
+            type="button"
+            onClick={startVideo}
+            aria-label={`Play ${title} product video`}
           >
-            WATCH NOW
-          </a>
-          <span>See how BellReserve answers a real call.</span>
-        </div>
+            <span className="project-detail-video__play" aria-hidden="true">
+              ▶
+            </span>
+          </button>
+        ) : (
+          <video
+            src={video.src}
+            title={`${title} product video`}
+            poster={video.poster}
+            controls
+            autoPlay
+            playsInline
+            preload="none"
+            onPause={() => setPlaying(false)}
+            onEnded={() => setPlaying(false)}
+          />
+        )}
+      </div>
+      <div className="project-detail-video-caption">
+        <button
+          type="button"
+          className="project-detail-video-caption__watch"
+          onClick={startVideo}
+        >
+          WATCH NOW
+        </button>
+        {liveCall?.intro && <span>{liveCall.intro}</span>}
+      </div>
+      {liveCall && (
         <a
-          id="bellreserve-live-call"
+          id={`${project.slug}-live-call`}
           className="project-detail-video-call"
-          href="tel:+16414664655"
+          href={`tel:${liveCall.tel}`}
         >
           <span>
-            <Phone size={19} aria-hidden="true" /> Tap to test BellReserve live
+            <Phone size={19} aria-hidden="true" /> {liveCall.label}
           </span>
-          <strong>+1 (641) 466-4655</strong>
+          <strong>{liveCall.display}</strong>
         </a>
-      </div>
-    );
-  }
-  const artworkKey = project.heroMockupKey ?? project.imageKey;
-  return artworkKey ? (
+      )}
+    </div>
+  );
+}
+
+function ProjectArtwork({ project }) {
+  if (project.video) return <ProjectVideo project={project} />;
+  const artInBackground = project.hero.artInBackground;
+  const artwork = project.images.heroMockup ?? project.images.card;
+  return artwork ? (
     <ResponsiveImage
-      src={IMAGES[artworkKey]}
+      src={artwork}
       width="1024"
       height="576"
       alt={`${project.title} project artwork`}
-      fetchPriority={project.heroArtInBackground ? undefined : "high"}
-      loading={project.heroArtInBackground ? "lazy" : undefined}
+      fetchPriority={artInBackground ? undefined : "high"}
+      loading={artInBackground ? "lazy" : undefined}
       decoding="async"
     />
   ) : (
@@ -99,21 +103,20 @@ function ProjectArtwork({ project }) {
   );
 }
 
-function ProjectContent({ project, details }) {
+function ProjectContent({ project }) {
+  const details = project.detail;
+  const { hero, images } = project;
   usePageMetadata({
     title: `${project.title} Case Study | UnicodeTech`,
     description: project.description,
     bodyClass: "site site-design project-detail-page-body",
   });
-  const next =
-    caseStudyProjects[
-      (caseStudyProjects.indexOf(project) + 1) % caseStudyProjects.length
-    ];
+  const next = project.next;
   const builtItems = details.built || details.features || [];
   const scopeItems = details.services || details.workflow || [];
   const hasMetrics =
     Array.isArray(details.metrics) && details.metrics.length > 0;
-  const clientCompany = clientLogos[project.clientLogoId];
+  const clientCompany = project.clientLogo;
   const reviewCard = details.reviewCardId
     ? clientReviews[details.reviewCardId]
     : null;
@@ -121,22 +124,20 @@ function ProjectContent({ project, details }) {
   return (
     <div className="page-content project-detail-page">
       <section
-        className={`project-detail-hero service-hero-theme${project.heroArtInBackground ? " project-detail-hero--art-bg" : ""}`}
+        className={`project-detail-hero service-hero-theme${hero.dark ? " project-detail-hero--dark" : " project-detail-hero--light"}${hero.artInBackground ? " project-detail-hero--art-bg" : ""}`}
         aria-labelledby="project-detail-title"
         style={{
-          ...(project.heroBgKey
-            ? {
-                "--image-caseStudiesHeroBg": `url(${IMAGES[project.heroBgKey]})`,
-              }
+          ...(images.heroBg
+            ? { "--image-caseStudiesHeroBg": `url(${images.heroBg})` }
             : {}),
-          ...(project.darkHero
+          ...(hero.dark
             ? {
                 "--service-hero-heading-color": "#fff",
                 "--service-hero-description-color": "#b8c2cd",
               }
             : {}),
-          ...(project.heroOverlay
-            ? { "--project-hero-overlay": project.heroOverlay }
+          ...(hero.overlay
+            ? { "--project-hero-overlay": hero.overlay }
             : {}),
         }}
       >
@@ -339,7 +340,7 @@ function ProjectContent({ project, details }) {
             <p>{next.category}</p>
           </div>
           <SiteLink
-            href={`/case-studies/${next.slug}`}
+            href={next.href}
             className="project-detail-next-link"
           >
             Explore Case Study <ArrowUpRight size={20} aria-hidden="true" />
@@ -352,11 +353,7 @@ function ProjectContent({ project, details }) {
 
 export default function ProjectDetails({ slug: pageSlug }) {
   const { slug } = useParams();
-  const project = caseStudyProjects.find(
-    (item) => item.slug === (pageSlug || slug),
-  );
-  if (!project || !projectDetails[project.slug]) return <NotFound />;
-  return (
-    <ProjectContent project={project} details={projectDetails[project.slug]} />
-  );
+  const project = getCaseStudy(pageSlug || slug);
+  if (!project) return <NotFound />;
+  return <ProjectContent project={project} />;
 }

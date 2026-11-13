@@ -56,6 +56,57 @@
   }
 }
 
+/* Readability: left scrim keeps text legible over any hero image */
+.project-detail-hero--dark {
+  background:
+    linear-gradient(90deg, rgba(8, 9, 16, 0.82) 0%, rgba(8, 9, 16, 0.55) 45%, transparent 75%),
+    linear-gradient(var(--project-hero-overlay, transparent), var(--project-hero-overlay, transparent)),
+    #0b0c12 var(--image-caseStudiesHeroBg) center/cover no-repeat;
+}
+
+.project-detail-hero--dark .breadcrumb,
+.project-detail-hero--dark .breadcrumb__list {
+  color: #fff;
+}
+
+.project-detail-hero--dark .breadcrumb__link {
+  opacity: 0.8;
+}
+
+.project-detail-hero--dark .breadcrumb__current {
+  opacity: 1;
+}
+
+.project-detail-hero--dark .project-detail-eyebrow,
+.project-detail-hero--dark .project-detail-back {
+  color: #ff7a59 !important;
+}
+
+.project-detail-hero--dark .project-detail-back {
+  border-color: #ff7a59;
+}
+
+.project-detail-hero--dark {
+  --service-hero-description-color: #e3e8ee !important;
+}
+
+.project-detail-hero--light .breadcrumb,
+.project-detail-hero--light .breadcrumb__list {
+  color: #1d2330;
+}
+
+.project-detail-hero--light .breadcrumb__link {
+  opacity: 0.8;
+}
+
+.project-detail-hero--light .breadcrumb__current {
+  opacity: 1;
+}
+
+.project-detail-hero--light {
+  --service-hero-description-color: #343c4a;
+}
+
 .project-detail-back {
   background-color: transparent;
   border: 1px solid #c83d1d;
@@ -146,6 +197,8 @@
   font-weight: 700;
   letter-spacing: .04em;
   text-decoration: none;
+  border: 0;
+  cursor: pointer;
 }
 
 .project-detail-video-caption>span {

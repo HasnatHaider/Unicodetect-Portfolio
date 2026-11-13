@@ -6,6 +6,7 @@ import App from "./App";
 import ErrorBoundary from "./components/errorHandling/ErrorBoundary";
 import { Toaster } from "sonner";
 import { MetadataContext } from "./contexts/metadata-context";
+import { InitialDataContext } from "./contexts/initial-data-context";
 import { IMAGES } from "./utils/Constant";
 import { backgroundImageKeys } from "./utils/imageBackgrounds";
 
@@ -14,7 +15,7 @@ export const imageStyles = Object.fromEntries(
     .filter((key) => IMAGES[key])
     .map((key) => [`--image-${key}`, `url("${IMAGES[key]}")`]),
 );
-export async function render(url) {
+export async function render(url, initialData = {}) {
   const collector = { current: null };
   const element = createElement(
     MetadataContext.Provider,
@@ -24,16 +25,20 @@ export async function render(url) {
       },
     },
     createElement(
-      StrictMode,
-      null,
+      InitialDataContext.Provider,
+      { value: initialData },
       createElement(
-        StaticRouter,
-        { location: url },
+        StrictMode,
+        null,
         createElement(
-          ErrorBoundary,
-          null,
-          createElement(App),
-          createElement(Toaster, { richColors: true }),
+          StaticRouter,
+          { location: url },
+          createElement(
+            ErrorBoundary,
+            null,
+            createElement(App),
+            createElement(Toaster, { richColors: true }),
+          ),
         ),
       ),
     ),

@@ -10,11 +10,10 @@ lerna-debug.log*
 # Local assistant settings and checks
 /.claude/
 node_modules
-package-lock.json
+# package-lock.json
 dist
 dist-ssr
 *.local
-/tests/
 
 # Editor directories and files
 .vscode/*

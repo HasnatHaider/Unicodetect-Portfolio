@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import usePageMetadata from "../hooks/usePageMetadata";
-import { caseStudyProjects } from "../utils/caseStudies";
+import { listCaseStudies } from "../caseStudies";
 import { paths } from "../routes/paths";
 import { SiteLink } from "../components/sharedUi/Interactive";
 import PageBreadcrumb from "../components/sharedUi/PageBreadcrumb";
@@ -67,7 +67,7 @@ export default function CaseStudies() {
             </p>
           </div>
           <div id="portfolio-grid" className="portfolio-grid">
-            {caseStudyProjects.map((project) => (
+            {listCaseStudies().map((project) => (
               <CaseStudyCard project={project} key={project.slug} />
             ))}
           </div>

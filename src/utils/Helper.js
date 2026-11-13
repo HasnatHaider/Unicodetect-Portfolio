@@ -1,4 +1,4 @@
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore/lite";
 import { db } from "./FirebaseConfig";
 
 export const generateCustomId = async (collectionName) => {

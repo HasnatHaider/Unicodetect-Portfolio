@@ -4,12 +4,16 @@ import { Calendar, ArrowLeft, ArrowUpRight, Link as LinkIcon, Check } from 'luci
 import { getBlogBySlug } from '../services/blog.services';
 import usePageMetadata from '../hooks/usePageMetadata';
 import BlogMedia from '../components/blog/BlogMedia';
-import { getPostPresentation, formatBlogDate, sanitizeBlogHtml, getStandaloneSocialUrl } from '../utils/blogContent';
+import { getPostPresentation, formatBlogDate, getStandaloneSocialUrl } from '../utils/blogContent';
+import { sanitizeBlogHtml } from '../utils/sanitizeBlogHtml';
+import { useInitialBlogPost } from '../contexts/initial-data-context';
+import { BASE_URL } from '../utils/metadata';
 import '../assets/styles/pages/blog.css';
 
-function Share({ title }) {
+function Share({ title, slug }) {
   const [message, setMessage] = useState('');
-  const url = typeof window === 'undefined' ? '' : window.location.href;
+  // Built from the slug, not window.location, so prerendered HTML and the first client render agree.
+  const url = `${BASE_URL}/blog/${slug}`;
   async function copyLink() {
     try { await navigator.clipboard.writeText(url); setMessage('Link copied'); }
     catch { setMessage('Couldn’t copy. Copy the address from your browser.'); }
@@ -25,9 +29,11 @@ function Share({ title }) {
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const [result, setResult] = useState({slug:'',blog:null,state:'loading'});
+  const initialPost = useInitialBlogPost(slug);
+  const [result, setResult] = useState(() => initialPost ? {slug,retry:0,blog:initialPost,state:'ready'} : {slug:'',blog:null,state:'loading'});
   const [retry, setRetry] = useState(0);
   useEffect(() => {
+    if (initialPost && retry === 0) return;
     let active = true;
     async function load() {
       try {
@@ -37,7 +43,7 @@ export default function BlogPost() {
     }
     load();
     return () => { active = false; };
-  }, [slug,retry]);
+  }, [slug,retry,initialPost]);
   const isCurrent = result.slug === slug && result.retry === retry;
   const blog = isCurrent ? result.blog : null;
   const state = isCurrent ? result.state : 'loading';
@@ -52,7 +58,7 @@ export default function BlogPost() {
   return <div className="blog-post">
     <div className="blog-post__top">
       <Link to="/blog" className="blog-back-link"><ArrowLeft size={16} /> All Posts</Link>
-      <div className="blog-post__cover"><BlogMedia image={post.image} title={post.title} provider={post.source?.provider} priority /></div>
+      <div className="blog-post__cover"><BlogMedia image={post.image} title={post.title} provider={post.source?.provider} sizes="(max-width: 1200px) 100vw, 1200px" priority /></div>
     </div>
     <article className="blog-post__article">
       <header className="blog-post__header">
@@ -67,7 +73,7 @@ export default function BlogPost() {
         <div className="blog-source__details"><div><span className="blog-source__provider">From {post.source.provider}</span><p>{post.excerpt}</p></div><a href={post.source.url} target="_blank" rel="noopener noreferrer">{post.source.provider === 'YouTube' ? 'Watch on YouTube' : `View on ${post.source.provider}`}<ArrowUpRight size={16} /></a></div>
       </section>}
       {showBody && <div className="blog-post__content" dangerouslySetInnerHTML={{__html:html}} />}
-      <footer className="blog-post__foot"><Link to="/blog" className="blog-back-link"><ArrowLeft size={15} /> Back to all posts</Link><Share key={slug} title={post.title} /></footer>
+      <footer className="blog-post__foot"><Link to="/blog" className="blog-back-link"><ArrowLeft size={15} /> Back to all posts</Link><Share key={slug} slug={slug} title={post.title} /></footer>
     </article>
   </div>;
 }

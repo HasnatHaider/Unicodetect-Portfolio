@@ -1,6 +1,5 @@
 import ResponsiveImage from "../sharedUi/ResponsiveImage";
 import { ArrowUpRight, Workflow } from "lucide-react";
-import { IMAGES } from "../../utils/Constant";
 import { SiteLink } from "../sharedUi/Interactive";
 import { paths } from "../../routes/paths";
 import ClientLogo from "../sharedUi/ClientLogo";
@@ -37,12 +36,12 @@ export default function CaseStudyCard({ project }) {
         </SiteLink>
       </div>
       <div className="portfolio-project-image">
-        {project.imageKey ? (
+        {project.images.card ? (
           <ResponsiveImage
-            src={IMAGES[project.imageKey]}
+            src={project.images.card}
             srcSet={
-              project.imageSmallKey
-                ? `${IMAGES[project.imageSmallKey]} 480w, ${IMAGES[project.imageKey]} 1024w`
+              project.images.cardSmall
+                ? `${project.images.cardSmall} 480w, ${project.images.card} 1024w`
                 : undefined
             }
             alt={`${project.title} project artwork`}

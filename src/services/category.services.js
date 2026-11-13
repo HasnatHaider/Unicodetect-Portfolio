@@ -13,8 +13,8 @@ import {
   query,
   limit,
   startAfter,
-  getCountFromServer,
-} from "firebase/firestore";
+  getCount as getCountFromServer,
+} from "firebase/firestore/lite";
 import { db } from "../utils/FirebaseConfig";
 import { generateCustomId } from "../utils/Helper";
 

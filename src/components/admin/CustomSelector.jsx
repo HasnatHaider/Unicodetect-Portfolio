@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, Check } from "lucide-react";
+import "../../assets/styles/components/customSelect.css";
 
 const CustomSelector = ({
   value,

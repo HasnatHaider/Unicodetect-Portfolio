@@ -11,9 +11,9 @@ import {
   orderBy,
   serverTimestamp,
   limit,
-  getCountFromServer,
+  getCount as getCountFromServer,
   startAfter,
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 import { db } from "../utils/FirebaseConfig";
 import { generateCustomId } from "../utils/Helper";
 import { addBlogToCategory, removeBlogFromCategory } from "./category.services";

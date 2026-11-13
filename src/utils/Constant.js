@@ -1,12 +1,4 @@
 import bmsEcosystemHeroBg from "../assets/images/bms-ecosystem-hero-bg.svg";
-import caseStudyContractorConnect from "../assets/images/ContractorConnect.png";
-import caseStudyContractorConnectHeroMockup from "../assets/images/Contractor-case-study-hero-Mockup-960.webp";
-import caseStudyContractorConnectHeroMockup480 from "../assets/images/Contractor-case-study-hero-Mockup-480.webp";
-import caseStudyContractorConnectHeroBg from "../assets/images/Contractor-case-study-hero-bg-1600.webp";
-import caseStudyTaskHive from "../assets/images/TaskHive.png";
-import caseStudyTaskHiveHeroMockup from "../assets/images/TaskHive-case-study-hero-Mockup-960.webp";
-import caseStudyTaskHiveHeroMockup480 from "../assets/images/TaskHive-case-study-hero-Mockup-480.webp";
-import caseStudyTaskHiveHeroBg from "../assets/images/TaskHive-case-study-hero-bg-1600.webp";
 import aboutHeroBg from "../assets/images/about-hero-bg.svg";
 import contactHeroBg from "../assets/images/contact-hero-bg.svg";
 import contactHeroMockup from "../assets/images/Contact-hero-Mockup-960.webp";
@@ -17,27 +9,6 @@ import contactLocationUs480 from "../assets/images/contact-location-us-bg-480.we
 import contactLocationPak from "../assets/images/contact-location-pak-bg-960.webp";
 import contactLocationPak480 from "../assets/images/contact-location-pak-bg-480.webp";
 import caseStudiesHeroBg from "../assets/images/case-studies-hero-bg.svg";
-import caseStudyIconicBeauti from "../assets/images/IconicBeauti.png";
-import caseStudyIconicBeautiHeroMockup from "../assets/images/Iconic-case-study-hero-Mockup-960.webp";
-import caseStudyIconicBeautiHeroMockup480 from "../assets/images/Iconic-case-study-hero-Mockup-480.webp";
-import caseStudyIconicBeautiHeroBg from "../assets/images/Iconic-case-study-hero-bg-1600.webp";
-import caseStudySpinTheNight from "../assets/images/STN.png";
-import caseStudySpinTheNightHeroMockup from "../assets/images/STN-case-study-hero-Mockup-960.webp";
-import caseStudySpinTheNightHeroMockup480 from "../assets/images/STN-case-study-hero-Mockup-480.webp";
-import caseStudySpinTheNightHeroBg from "../assets/images/STN-case-study-hero-bg-1600.webp";
-import caseStudyDailyDigest from "../assets/images/DailyDigest.png";
-import caseStudyDailyDigestHeroMockup from "../assets/images/DailyDigest-case-study-hero-Mockup-960.webp";
-import caseStudyDailyDigestHeroMockup480 from "../assets/images/DailyDigest-case-study-hero-Mockup-480.webp";
-import caseStudyDailyDigestHeroBg from "../assets/images/DailyDigest-case-study-hero-bg-1600.webp";
-import caseStudyLiftPitch from "../assets/images/LiftPitchCover-1024.webp";
-import caseStudyLiftPitch480 from "../assets/images/LiftPitchCover-480.webp";
-import caseStudyLiftPitchHeroBg from "../assets/images/LiftPitchHero-1792.webp";
-import caseStudyBellReserve from "../assets/images/BellReserveAIReceptionistDashboard.png";
-import caseStudyBellReserveHeroBg from "../assets/images/BRHeroBG.jpg";
-import caseStudyCareCompass from "../assets/images/CareCompass.png";
-import caseStudyCareCompassHeroMockup from "../assets/images/CareCompass-case-study-hero-Mockup-960.webp";
-import caseStudyCareCompassHeroMockup480 from "../assets/images/CareCompass-case-study-hero-Mockup-480.webp";
-import caseStudyCareCompassHeroBg from "../assets/images/CareCompass-case-study-hero-bg-1600.webp";
 import businessApplicationsCardBg from "../assets/images/business-applications-card-bg-1254.webp";
 import customSoftwareDevelopmentHeroBg from "../assets/images/custom-software-development-hero-bg.svg";
 import crmErpSolutionsHeroBg from "../assets/images/crm-erp-solutions-hero-bg.svg";
@@ -46,7 +17,7 @@ import qaTestingHeroBg from "../assets/images/qa-testing-hero-bg.svg";
 import dedicatedProductTeamsHeroBg from "../assets/images/dedicated-product-teams-hero-bg.svg";
 import productDiscoveryStrategyHeroBg from "../assets/images/product-discovery-strategy-hero-bg.svg";
 import maintenanceSupportHeroBg from "../assets/images/maintenance-support-hero-bg.svg";
-import aiVideoCreatorStudio from "../assets/images/AI-Video-Production-Workspace.png";
+import aiVideoCreatorStudio from "../assets/images/AI-Video-Production-Workspace-1280.webp";
 import apiSystemsIntegrationHeroBg from "../assets/images/api-systems-integration-hero-bg-2000.webp";
 import apiSystemsIntegrationCaseStudy from "../assets/images/api-systems-integration-case-study-968.webp";
 import uiuxUserResearch from "../assets/images/uiux-user-research.png";
@@ -299,35 +270,6 @@ export const IMAGES = {
   contactLocationPak,
   contactLocationPak480,
   caseStudiesHeroBg,
-  caseStudyContractorConnect,
-  caseStudyContractorConnectHeroMockup,
-  caseStudyContractorConnectHeroMockup480,
-  caseStudyContractorConnectHeroBg,
-  caseStudyTaskHive,
-  caseStudyTaskHiveHeroMockup,
-  caseStudyTaskHiveHeroMockup480,
-  caseStudyTaskHiveHeroBg,
-  caseStudyIconicBeauti,
-  caseStudyIconicBeautiHeroMockup,
-  caseStudyIconicBeautiHeroMockup480,
-  caseStudyIconicBeautiHeroBg,
-  caseStudySpinTheNight,
-  caseStudySpinTheNightHeroMockup,
-  caseStudySpinTheNightHeroMockup480,
-  caseStudySpinTheNightHeroBg,
-  caseStudyDailyDigest,
-  caseStudyDailyDigestHeroMockup,
-  caseStudyDailyDigestHeroMockup480,
-  caseStudyDailyDigestHeroBg,
-  caseStudyLiftPitch,
-  caseStudyLiftPitch480,
-  caseStudyLiftPitchHeroBg,
-  caseStudyBellReserve,
-  caseStudyBellReserveHeroBg,
-  caseStudyCareCompass,
-  caseStudyCareCompassHeroMockup,
-  caseStudyCareCompassHeroMockup480,
-  caseStudyCareCompassHeroBg,
 
   businessApplicationsCardBg,
   customSoftwareDevelopmentHeroBg,

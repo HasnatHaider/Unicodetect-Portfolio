@@ -1,22 +1,19 @@
 import ResponsiveImage from "../sharedUi/ResponsiveImage";
 import { paths } from "../../routes/paths";
 import { ArrowRight } from "lucide-react";
-import { caseStudyProjects } from "../../utils/caseStudies";
-import { IMAGES } from "../../utils/Constant";
+import { listCaseStudies } from "../../caseStudies";
 import { SiteLink } from "../sharedUi/Interactive";
 import UiUxSectionHeading from "./UiUxSectionHeading";
 
-const stories = caseStudyProjects
-  .filter((project) =>
-    ["contractor-connect", "task-hive"].includes(project.slug),
-  )
-  .map((project) => ({
+const stories = listCaseStudies({
+  slugs: ["contractor-connect", "task-hive"],
+}).map((project) => ({
     category: project.category,
     title: project.title,
     description: project.description,
     link: `Read ${project.title} Story`,
     href: project.href,
-    image: IMAGES[project.imageKey],
+    image: project.images.card,
     alt: `${project.title} mobile app interfaces`,
   }));
 

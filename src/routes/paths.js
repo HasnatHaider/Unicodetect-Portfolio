@@ -1,4 +1,5 @@
 export const paths = {
+  ReDesignLanding: "/redesign-landing",
   bmsEcosystem: "/bms-ecosystem",
   caseStudies: "/case-studies",
   about: "/about-us",

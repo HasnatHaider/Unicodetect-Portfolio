@@ -1,8 +1,68 @@
 import { useState } from "react";
+import {
+  AppWindow,
+  ArrowRight,
+  Award,
+  BadgeCheck,
+  Bot,
+  CalendarDays,
+  CircleCheck,
+  Clapperboard,
+  CloudCheck,
+  Code,
+  Database,
+  ExternalLink,
+  FileText,
+  Headset,
+  MonitorSmartphone,
+  Network,
+  PenTool,
+  ScanSearch,
+  Server,
+  ShoppingBag,
+  Smartphone,
+  Users,
+  Webhook,
+} from "lucide-react";
 import "../assets/styles/pages/services.css";
 import usePageMetadata from "../hooks/usePageMetadata";
 import CalendlyLink from "../components/sharedUi/CalendlyLink";
 import PageBreadcrumb from "../components/sharedUi/PageBreadcrumb";
+// Lucide icons stand in for the Material Symbols font, which was a
+// render-blocking Google Fonts request of several MB.
+const SERVICE_ICONS = {
+  smart_toy: Bot,
+  search_insights: ScanSearch,
+  code: Code,
+  dataset: Database,
+  web: AppWindow,
+  shopping_bag: ShoppingBag,
+  article: FileText,
+  design_services: PenTool,
+  phone_iphone: Smartphone,
+  api: Webhook,
+  hub: Network,
+  cloud_done: CloudCheck,
+  verified: BadgeCheck,
+  groups: Users,
+  support_agent: Headset,
+  movie: Clapperboard,
+  devices: MonitorSmartphone,
+  dns: Server,
+  check_circle: CircleCheck,
+  calendar_month: CalendarDays,
+  arrow_forward: ArrowRight,
+  open_in_new: ExternalLink,
+  award_star: Award,
+};
+
+function ServiceIcon({ name, size, className }) {
+  const Icon = SERVICE_ICONS[name];
+  return Icon ? (
+    <Icon size={size} className={className} aria-hidden="true" />
+  ) : null;
+}
+
 const SERVICES = {
   1: {
     suite: "suite-ai",
@@ -834,9 +894,7 @@ const ServicesPage = () => {
                 <div key={suite.id} className="suite-group">
                   <div className={`suite-label-row ${suite.labelClass}`}>
                     <span>{suite.label}</span>
-                    <span className="material-symbols-outlined suite-label-icon">
-                      {suite.icon}
-                    </span>
+                    <ServiceIcon name={suite.icon} size={16} className="suite-label-icon" />
                   </div>
                   {suite.serviceIds.map((id) => {
                     const svc = SERVICES[id];
@@ -849,9 +907,7 @@ const ServicesPage = () => {
                         aria-pressed={isActive}
                       >
                         <div className="service-btn-left">
-                          <span className="material-symbols-outlined service-btn-icon">
-                            {svc.icon}
-                          </span>
+                          <ServiceIcon name={svc.icon} size={20} className="service-btn-icon" />
                           <div className="service-btn-text">
                             <span className="service-btn-name">{svc.name}</span>
                             <span className="service-btn-sub">
@@ -892,9 +948,7 @@ const ServicesPage = () => {
             </div>
             <div className="deliverables-box">
               <div className="deliverables-heading">
-                <span className="material-symbols-outlined deliverables-heading-icon">
-                  verified
-                </span>
+                <ServiceIcon name="verified" size={18} className="deliverables-heading-icon" />
                 What We Deliver
               </div>
               <ul className="deliverables-list">
@@ -919,7 +973,7 @@ const ServicesPage = () => {
             <div className="proof-bar">
               <div className="proof-left">
                 <div className="proof-icon-circle">
-                  <span className="material-symbols-outlined">award_star</span>
+                  <ServiceIcon name="award_star" size={18} />
                 </div>
                 <div>
                   <span className="proof-meta-label">
@@ -934,15 +988,11 @@ const ServicesPage = () => {
                   href={current.path}
                 >
                   <span>Learn More</span>
-                  <span className="material-symbols-outlined scope-cta-icon">
-                    open_in_new
-                  </span>
+                  <ServiceIcon name="open_in_new" size={16} className="scope-cta-icon" />
                 </a>
                 <CalendlyLink className="scope-cta-btn">
                   <span>Book a Strategy Call</span>
-                  <span className="material-symbols-outlined scope-cta-icon">
-                    arrow_forward
-                  </span>
+                  <ServiceIcon name="arrow_forward" size={16} className="scope-cta-icon" />
                 </CalendlyLink>
               </div>
             </div>
@@ -984,21 +1034,15 @@ const ServicesPage = () => {
                 </p>
                 <div className="card-feature-list">
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--green">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--green" />
                     <span>Full-time allocation — no shared resources</span>
                   </div>
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--green">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--green" />
                     <span>Monthly rolling cadence with 30-day flexibility</span>
                   </div>
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--green">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--green" />
                     <span>
                       Daily standups — US and EU timezone overlap available
                     </span>
@@ -1029,25 +1073,19 @@ const ServicesPage = () => {
                 </p>
                 <div className="card-feature-list">
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--red">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--red" />
                     <span>
                       Strict milestone deliverables with acceptance criteria
                     </span>
                   </div>
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--red">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--red" />
                     <span>
                       30-day post-launch warranty &amp; hypercare included
                     </span>
                   </div>
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--red">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--red" />
                     <span>Complete CI/CD, documentation &amp; IP transfer</span>
                   </div>
                 </div>
@@ -1078,25 +1116,19 @@ const ServicesPage = () => {
                 </p>
                 <div className="card-feature-list">
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--green">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--green" />
                     <span>
                       Live working prototype integrated with your data
                     </span>
                   </div>
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--green">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--green" />
                     <span>
                       Architecture options with delivery risks documented
                     </span>
                   </div>
                   <div className="card-feature-item">
-                    <span className="material-symbols-outlined feature-check-icon feature-check-icon--green">
-                      check_circle
-                    </span>
+                    <ServiceIcon name="check_circle" size={18} className="feature-check-icon feature-check-icon--green" />
                     <span>Production scale-up implementation blueprint</span>
                   </div>
                 </div>
@@ -1178,15 +1210,11 @@ const ServicesPage = () => {
               <div className="cta-buttons-col">
                 <CalendlyLink className="cta-btn-book">
                   <span>Book a Strategy Call</span>
-                  <span className="material-symbols-outlined cta-btn-icon">
-                    calendar_month
-                  </span>
+                  <ServiceIcon name="calendar_month" size={18} className="cta-btn-icon" />
                 </CalendlyLink>
                 <a className="cta-btn-download" href="/contact">
                   <span>Get in Touch</span>
-                  <span className="material-symbols-outlined cta-btn-icon">
-                    arrow_forward
-                  </span>
+                  <ServiceIcon name="arrow_forward" size={18} className="cta-btn-icon" />
                 </a>
               </div>
             </div>

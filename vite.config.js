@@ -37,7 +37,8 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     manifest: true,
-    assetsInlineLimit: 4096,
+    assetsInlineLimit: (filePath) =>
+      /\.(png|jpe?g|webp|avif|gif)$/i.test(filePath) ? false : undefined,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -47,9 +48,6 @@ export default defineConfig({
           }
           if (id.includes('node_modules/react-router-dom')) {
             return 'vendor-router'
-          }
-          if (id.includes('node_modules/swiper')) {
-            return 'vendor-swiper'
           }
           if (id.includes('node_modules/lucide-react') || id.includes('node_modules/sonner')) {
             return 'vendor-ui'

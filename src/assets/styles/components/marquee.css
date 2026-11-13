@@ -1,0 +1,56 @@
+.marquee {
+  --marquee-show: var(--marquee-show-mobile);
+  --marquee-gap: var(--marquee-gap-mobile);
+  container-type: inline-size;
+  overflow: hidden;
+  width: 100%;
+}
+@media (width >= 768px) {
+  .marquee {
+    --marquee-show: var(--marquee-show-tablet);
+    --marquee-gap: var(--marquee-gap-tablet);
+  }
+}
+@media (width >= 1025px) {
+  .marquee {
+    --marquee-show: var(--marquee-show-desktop);
+    --marquee-gap: var(--marquee-gap-desktop);
+  }
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration) linear infinite;
+  will-change: transform;
+}
+.marquee--reverse .marquee__track {
+  animation-direction: reverse;
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+/* Each slide carries its gap as right padding, so one full set is exactly
+   half the track and the -50% loop has no seam. */
+.marquee__slide {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: calc((100cqw + var(--marquee-gap)) / var(--marquee-show));
+  padding-right: var(--marquee-gap);
+}
+.marquee__slide figure {
+  margin: 0;
+  line-height: inherit;
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+}

@@ -1,6 +1,6 @@
 import { ArrowUpRight, Layers, Workflow, ShieldCheck } from "lucide-react";
 import usePageMetadata from "../hooks/usePageMetadata";
-import { caseStudyProjects } from "../utils/caseStudies";
+import { listCaseStudies } from "../caseStudies";
 import { paths } from "../routes/paths";
 import { SiteLink } from "../components/sharedUi/Interactive";
 import PageBreadcrumb from "../components/sharedUi/PageBreadcrumb";
@@ -10,11 +10,7 @@ import ClientLogo from "../components/sharedUi/ClientLogo";
 import "../assets/styles/pages/caseStudies.css";
 import "../assets/styles/pages/bmsEcosystem.css";
 
-const products = caseStudyProjects.filter((project) =>
-  ["carecompass", "daily-digest", "contractor-connect", "task-hive"].includes(
-    project.slug,
-  ),
-);
+const products = listCaseStudies({ client: "bms" });
 
 export default function BmsEcosystem() {
   usePageMetadata({
